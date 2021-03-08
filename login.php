@@ -1,3 +1,39 @@
+<?php
+session_start();
+
+if(isset($_SESSION['usr_id'])!="") {
+	header("Location: index.php");
+}
+
+include 'includes/dbconnect.php';
+
+//check if form is submitted
+if (isset($_POST['login'])) {
+
+	$email = mysqli_real_escape_string($con, $_POST['email']);
+	$password = mysqli_real_escape_string($con, $_POST['password']);
+	$result = mysqli_query($con, "SELECT * FROM employees WHERE emailid = '" . $email. "' and password = '" . $password . "'");
+
+	if ($row = mysqli_fetch_array($result)) {
+		$_SESSION['usr_id'] = $row['empid'];
+		$_SESSION['usr_name'] = $row['empname'];
+
+		if($_SESSION['usr_id']==1){
+
+            
+			header("Location: admin.php");
+		}else{
+			
+            header("Location: customer.php");
+
+		}
+	} else {
+		$errormsg = "Incorrect Email or Password!!!";
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +52,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" a="all">
+<link href="login.css" rel="stylesheet" type="text/css" a="all">
 
 </head>
 
@@ -75,22 +113,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.php">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                     <li><a href="post.html">Blog</a></li>
                                     <li><a href="services.html">Services</a> </li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
-                                        <!-- <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul> -->
-                                       
-                                    
-                                    
-                                    <!-- <li><a href="login.php">Login</a></li> -->
-                                    <!-- <li><a href="user_account.html">Dashboard</a></li> -->
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -98,7 +125,7 @@
 
                         <!-- Contact -->
                         <div class="contact">
-                            <a href="#"><img src="img/core-img/call2.png" alt=""> +91-855-5286-511</a>
+                        <span> <i class="fa fa-user" style='font-size:24px;color:white'></i></span> <a href="signup.php">Sign up</a>
                         </div>
                     </nav>
                 </div>
@@ -107,93 +134,39 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Hero Area Start ##### -->
-    <div class="hero-area">
-        <div class="hero-slideshow owl-carousel">
-
-            <!-- Single Slide -->
-            <div class="single-slide bg-img">
-                <!-- Background Image-->
-                <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(img/bg-img/1.jpg);"></div>
-                <!-- Welcome Text -->
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center justify-content-center">
-                        <div class="col-12 col-lg-9">
-                            <div class="welcome-text text-center">
-                                <h2 data-animation="fadeInUp" data-delay="300ms"><span>BANKING</span> PARTNER</h2>
-                                <!-- <p data-animation="fadeInUp" data-delay="500ms">Vestibulum eu vehicula elit, nec elementum orci. Praesent aliquet ves tibulum tempus. Pellentesque posuere pharetra turpis, eget finibus erat porta placerat.</p> -->
-                                <a href="login.php" class="btn credit-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Login as Admin</a>
-                                <a href="login1.php" class="btn credit-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Login as Customer</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide Duration Indicator -->
-                <div class="slide-du-indicator"></div>
-            </div>    
-
-        </div>
-    </div>
-    <!-- ##### Hero Area End ##### -->
-
-    <!-- ##### Features Area Start ###### -->
-    <section class="features-area section-padding-100-0">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Section Heading -->
-                        <div class="section-heading">
-                            <div class="line"></div>
-                            <p>Take look at our</p>
-                            <h2>Our Services</h2>
-                        </div>
-                        <!-- <h6>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Viva mus rutrum dui fermentum eros hendrerit.</h6> -->
-                        <a href="login1.php" class="btn credit-btn mt-50">Discover</a>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <img src="img/bg-img/2.jpg" alt="">
-                        <h5>We take care of you</h5>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <img src="img/bg-img/3.jpg" alt="">
-                        <h5>No documents needed</h5>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-features-area mb-100 wow fadeInUp" data-wow-delay="700ms">
-                        <img src="img/bg-img/4.jpg" alt="">
-                        <h5>Fast &amp; easy loans</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Features Area End ###### -->
-
     
-    <!-- ##### Call To Action Start ###### -->
-    <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Cta Content -->
-                    <div class="cta-content d-flex flex-wrap align-items-center justify-content-between">
-                        <div class="cta-text">
-                            <h4>Are you in need for a loan? Get in touch with us.</h4>
-                        </div>
-                        <div class="cta-btn">
-                            <a href="login1.php" class="btn credit-btn box-shadow">Apply Here</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <div class="row-1">
+    <div class="form-1">
+        
+        <form method="post" id="regForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="registrationForm" autocomplete="off">
+           
+                <div class="form-heading"><h1>Admin Log in</h1></div>
+                
+                <p>Email: <br>
+                    <input type="email" name="email" placeholder="Email" id="email" required>
+                    </p>
+    
+                <p>Password: <br>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            </p>
+        <!-- <input  type="submit" value="submit" class="submit"> -->
+        <input type="submit" name = "login" value="login" class="submit" style = "margin-right: 30%; ">
+        <!-- <p class="not-registered"><a href="user_account.html">Submit</a></p> -->
+            <!-- <p class="not-registered">Login as Customer <a href="login1.php">Login</a></p> -->
+        
+        </form> 
+        <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
+
+    </div>
+    </div> 
+    </div>  
+    <div class="clear"></div>
+    </div>
+    
+   
+    
+   
     <!-- ##### Call To Action End ###### -->
 
     <!-- ##### Services Area Start ###### -->
@@ -203,13 +176,10 @@
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center mb-100 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="line"></div>
-                        <p>Take look at our</p>
                         <h2>Our services</h2>
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
@@ -223,33 +193,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="icon">
-                            <i class="icon-money-1"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Easy and fast answer</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="icon">
-                            <i class="icon-coin"></i>
-                        </div>
-                        <div class="text">
-                            <h5>No additional papers</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="500ms">
@@ -262,7 +205,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Single Service Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="600ms">
@@ -274,43 +216,11 @@
                             <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
                         </div>
                     </div>
-                </div>
-
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="700ms">
-                        <div class="icon">
-                            <i class="icon-piggy-bank"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Accumulation goals</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                        </div>
-                    </div>
-                </div>
+                </div> 
             </div>
         </div>
     </section>
     <!-- ##### Services Area End ###### -->
-<!-- ##### Newsletter Area Start ###### -->
-    <section class="newsletter-area section-padding-100 bg-img jarallax" style="background-image: url(img/bg-img/6.jpg);">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-lg-8">
-                    <div class="nl-content text-center">
-                        <h2>Subscribe to our newsletter</h2>
-                        <form action="#" method="post">
-                            <input type="email" name="nl-email" id="nlemail" placeholder="Your e-mail">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                        <!-- <p>Curabitur elit turpis, maximus quis ullamcorper sed, maximus eu neque. Cras ultrices erat nec auctor blandit.</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Newsletter Area End ###### -->
-
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area section-padding-100-0">
         <div class="container">
@@ -325,8 +235,8 @@
                             <ul>
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
-                                <li><a href="services.html">Services &amp; Offers</a></li>
-                                <!-- <li><a href="#">Portfolio Presentation</a></li> -->
+                                <li><a href="services">Services &amp; Offers</a></li>
+                                <!-- <li><a href="">Portfolio Presentation</a></li> -->
                                 <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
@@ -409,7 +319,7 @@
                     <div class="col-12">
                         <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
                             <!-- Footer Logo -->
-                            <a href="index.php" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+                            <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -434,6 +344,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script> 
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 
 </html>

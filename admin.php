@@ -138,7 +138,7 @@ include 'includes/dbconnect.php';
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div class="single-icons mb-30">
                                 <i class="icon-smartphone"></i>
-                                <a href="withdrawmoney.php"><span>Withdraw Money</span></a> 
+                                <a href="withdrawmoney.php"><span>Withdraw </span></a> 
                         
                             </div>
                         </div>

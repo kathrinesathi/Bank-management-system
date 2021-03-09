@@ -68,9 +68,9 @@ include 'includes/dbconnect.php';
                         </div>
                         <!-- Contact -->
                         <div class="contact">
-                            <!-- <a href="index.html"> LOG-OUT </a> -->
+                        
                             <?php if (isset($_SESSION['usr_id']))  ?>
-				            <li><a href="logout.php">Log Out</a></li>
+				            <a href="logout.php">Log Out</a>
 				            
                         </div>
                     </nav>
@@ -97,14 +97,7 @@ include 'includes/dbconnect.php';
                              <a href="accountdetails.php"> <span>Account Details</span></a>  
                             </div>
                         </div>
-                        <!-- Single Icons -->
-                        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-diamond"></i>
-                                <a href="priviliges.html"><span>Priviliges</span></a>
-                                
-                            </div>
-                        </div> -->
+                       
                         <!-- Single Icons -->
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div class="single-icons mb-30">
@@ -119,6 +112,14 @@ include 'includes/dbconnect.php';
                                 <i class="icon-check"></i>
                                 <a href="transactions.php"><span>Transactions</span></a> 
                                
+                            </div>
+                        </div>
+                         <!-- Single Icons -->
+                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-icons mb-30">
+                                <i class="icon-credit-card-1"></i>
+                                <a href="loaninfo.php"><span>Fastag</span></a> 
+                                
                             </div>
                         </div>                        
                         <!-- Single Icons -->
@@ -154,22 +155,8 @@ include 'includes/dbconnect.php';
                                 
                             </div>
                         </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-credit-card-1"></i>
-                                <a href="loaninfo.php"><span>Fastag</span></a> 
-                                
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-wallet"></i>
-                                <a href="#"><span>Wallet</span></a> 
-                                
-                            </div>
-                        </div> -->
+                       
+                        
                     </div>
                 </div>
                 
@@ -247,7 +234,6 @@ include 'includes/dbconnect.php';
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services &amp; Offers</a></li>
-                                <!-- <li><a href="#">Portfolio Presentation</a></li> -->
                                 <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
@@ -264,7 +250,6 @@ include 'includes/dbconnect.php';
                                 <li><a href="login1.php">Our Loans</a></li>
                                 <li><a href="login1.php">Trading &amp; Commerce</a></li>
                                 <li><a href="login1.php">Banking &amp; Private Equity</a></li>
-                                <!-- <li><a href="#">Industrial &amp; Factory</a></li> -->
                                 <li><a href="login1.php">Financial Solutions</a></li>
                             </ul>
                         </nav>
@@ -333,9 +318,9 @@ include 'includes/dbconnect.php';
                             <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
                             <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p class="copywrite-text"><a href="#">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</p>
                         </div>
                     </div>
                 </div>

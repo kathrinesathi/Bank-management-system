@@ -22,11 +22,11 @@ if (isset($_POST['login'])) {
 
             
 			header("Location: admin.php");
-		}else{
+		 }//else{
 			
-            header("Location: customer.php");
+        //     header("Location: customer.php");
 
-		}
+		// }
 	} else {
 		$errormsg = "Incorrect Email or Password!!!";
 	}
@@ -150,10 +150,8 @@ if (isset($_POST['login'])) {
                 <p>Password: <br>
             <input type="password" name="password" placeholder="Password" id="password" required>
             </p>
-        <!-- <input  type="submit" value="submit" class="submit"> -->
         <input type="submit" name = "login" value="login" class="submit" style = "margin-right: 30%; ">
-        <!-- <p class="not-registered"><a href="user_account.html">Submit</a></p> -->
-            <!-- <p class="not-registered">Login as Customer <a href="login1.php">Login</a></p> -->
+      
         
         </form> 
         <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
@@ -236,7 +234,6 @@ if (isset($_POST['login'])) {
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services">Services &amp; Offers</a></li>
-                                <!-- <li><a href="">Portfolio Presentation</a></li> -->
                                 <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
@@ -253,7 +250,6 @@ if (isset($_POST['login'])) {
                                 <li><a href="login1.php">Our Loans</a></li>
                                 <li><a href="login1.php">Trading &amp; Commerce</a></li>
                                 <li><a href="login1.php">Banking &amp; Private Equity</a></li>
-                                <!-- <li><a href="login1.php">Industrial &amp; Factory</a></li> -->
                                 <li><a href="login1.php">Financial Solutions</a></li>
                             </ul>
                         </nav>
@@ -322,9 +318,9 @@ if (isset($_POST['login'])) {
                             <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
                             <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p class="copywrite-text"><a href="#">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</p>
                         </div>
                     </div>
                 </div>

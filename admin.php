@@ -69,9 +69,9 @@ include 'includes/dbconnect.php';
                         </div>
                         <!-- Contact -->
                         <div class="contact">
-                            <!-- <a href="index.html"> LOG-OUT </a> -->
+                       
                             <?php if (isset($_SESSION['usr_id']))  ?>
-				            <li><a href="logout.php">Log Out</a></li>
+				            <a href="logout.php">Log Out</a>
 				            
                         </div>
                     </nav>
@@ -150,14 +150,7 @@ include 'includes/dbconnect.php';
                                 
                             </div>
                         </div>
-                        <!-- Single Icons -->
-                        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-atm-machine-1"></i>
-                                <a href="#"><span>ATM</span></a> 
-                                
-                            </div>
-                        </div> -->
+                     
                         <!-- Single Icons -->
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div class="single-icons mb-30">
@@ -166,14 +159,7 @@ include 'includes/dbconnect.php';
                                 
                             </div>
                         </div>
-                        <!-- Single Icons -->
-                        <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-wallet"></i>
-                                <a href="#"><span>Wallet</span></a> 
-                                
-                            </div>
-                        </div> -->
+                       
                     </div>
                 </div>
                 
@@ -191,9 +177,9 @@ include 'includes/dbconnect.php';
                             <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
                             <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p class="copywrite-text"><a href="#">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</p>
                         </div>
                     </div>
                 </div>

@@ -21,10 +21,10 @@ if (isset($_POST['login'])) {
 		if($_SESSION['usr_id']==1){
 
 			header("Location: customer.php");
-		}else{
+		} //else{
 			
-			header("Location: admin.php");
-		}
+		// 	header("Location: admin.php");
+		// }
 	} else {
 		$errormsg = "Incorrect Email or Password!!!";
 	}
@@ -234,7 +234,6 @@ if (isset($_POST['login'])) {
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services &amp; Offers</a></li>
-                                <!-- <li><a href="#">Portfolio Presentation</a></li> -->
                                 <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
@@ -251,7 +250,6 @@ if (isset($_POST['login'])) {
                                 <li><a href="login1.php">Our Loans</a></li>
                                 <li><a href="login1.php">Trading &amp; Commerce</a></li>
                                 <li><a href="login1.php">Banking &amp; Private Equity</a></li>
-                                <!-- <li><a href="#">Industrial &amp; Factory</a></li> -->
                                 <li><a href="login1.php">Financial Solutions</a></li>
                             </ul>
                         </nav>
@@ -320,9 +318,9 @@ if (isset($_POST['login'])) {
                             <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
                             <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p class="copywrite-text"><a href="#">
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</p>
                         </div>
                     </div>
                 </div>

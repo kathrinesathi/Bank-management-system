@@ -21,10 +21,11 @@ if (isset($_POST['login'])) {
 		if($_SESSION['usr_id']==1){
 
 			header("Location: customer.php");
-		} //else{
+		}
+         else{
 			
-		// 	header("Location: admin.php");
-		// }
+			header("Location: admin.php");
+		}
 	} else {
 		$errormsg = "Incorrect Email or Password!!!";
 	}

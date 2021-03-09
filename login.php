@@ -22,11 +22,12 @@ if (isset($_POST['login'])) {
 
             
 			header("Location: admin.php");
-		 }//else{
+		 }
+         else{
 			
-        //     header("Location: customer.php");
+            header("Location: customer.php");
 
-		// }
+		}
 	} else {
 		$errormsg = "Incorrect Email or Password!!!";
 	}

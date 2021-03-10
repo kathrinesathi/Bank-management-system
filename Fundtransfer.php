@@ -75,7 +75,6 @@ include 'includes/dbconnect.php';
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
     <title>BB Bank.com - BB Company</title>
@@ -146,21 +145,7 @@ include 'includes/dbconnect.php';
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                <ul>
-                                    <!-- <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">Services</a>
-                                        <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul>
-                                        </li>
-                                    <li><a href="post.html">Blog</a></li> -->
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <!-- <li><a href="login.html">Login</a></li> -->
-                                </ul>
+                                
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -188,7 +173,7 @@ include 'includes/dbconnect.php';
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">DashBoard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Fundtransfer</li>
                             </ol>
                         </nav>
                     </div>
@@ -199,16 +184,17 @@ include 'includes/dbconnect.php';
     <!-- ##### Breadcrumb Area End ##### -->
 
     <!-- ##### Elements Area Start ##### -->
-    <section class="elements-area section-padding-100-0">
+    <section class="elements-area section-padding-70-0">
 
-
-        <!-- ========== Web Icons ========== -->
-        <div class="col-12">
-            <div class="elements-title mb-30">
-                <div class="line"></div>
-                <h2>User DashBoard</h2>
+        <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-8">
+                <h4><?php echo $success ?></h4>
             </div>
         </div>
+
+        <!-- ========== Web Icons ========== -->
+        
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
 
         <div class="col-12 mb-70">
@@ -230,21 +216,16 @@ include 'includes/dbconnect.php';
                         <a href="customer.php"> <span>Dash Board</span></a>
                     </div>
                 </div>
-                
+
                 <div class="container">
+
                     <article class="row">
                         <section class="col-lg-8">
                             <div class="page-header">
                                 <h2>Transfer amount</h2>
                             </div>
                             <form class="form-horizontal" action="Fundtransfer.php" method="post" role="form">
-                                <!-- <div class="form-group">
-							<label for="name" class="col-sm-3 control-label">Select a payee *</label>
-								<div class="col-sm-8">
-									<select class="form-control" name= "accno" id= "accno">
-									
-									</select>
-					</div></div> -->
+                                
                                 <div class="form-group">
                                     <label for="number" class="col-sm-6 control-label"><b>Enter Payee Account Number
                                             *</label>
@@ -267,19 +248,9 @@ include 'includes/dbconnect.php';
                                             class="btn btn-block btn-primary">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label"></label>
-                                    <div class="col-sm-8">
-                                        <h4><?php echo $success ?></h4>
-                                    </div>
-                                </div>
 
-                                <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
-                                    <i class="icon-purse"></i>
-                                    <a href="customer.php"> <span>Dash Board</span></a>
-                                </div> -->
-
+                              
                     </article>
                     </form>
     </section>
@@ -337,7 +308,6 @@ include 'includes/dbconnect.php';
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services &amp; Offers</a></li>
-                                <!-- <li><a href="">Portfolio Presentation</a></li> -->
                                 <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
@@ -345,7 +315,7 @@ include 'includes/dbconnect.php';
                 </div>
 
                 <!-- Single Footer Widget -->
-                <!-- <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget mb-100">
                         <h5 class="widget-title">Solutions</h5>
                         
@@ -430,12 +400,10 @@ include 'includes/dbconnect.php';
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="#">
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;<script>
                                     document.write(new Date().getFullYear());
                                     </script> All rights reserved
                                 </a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
                     </div>

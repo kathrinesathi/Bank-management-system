@@ -81,13 +81,28 @@ include 'includes/dbconnect.php';
     </header>
     <!-- ##### Header Area End ##### -->
                 <!-- ========== Web Icons ========== -->
-                <div class="col-12">
+                <!-- <div class="col-12">
                     <div class="elements-title mb-30">
-                          <section class="elements-area section-padding-100-0">
+                          <section class="elements-area section-padding-80-0">
                         <h2>User DashBoard</h2>
                     </div>
+                </div> -->
+                  <!-- ##### Breadcrumb Area Start ##### -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/13.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2> User Dashboard</h2>
+                    </div>
                 </div>
-                <h3>Welcome, <?php echo $_SESSION['usr_name']; ?></h3>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Breadcrumb Area End ##### -->
+                <div class="col-12 mt-30 mb-30">
+                      <h3>Welcome, <?php echo $_SESSION['usr_name']; ?></h3>
+                </div>
                 <div class="col-12 mb-70">
                     <div class="row">                        
                         <!-- Single Icons -->

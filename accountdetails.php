@@ -83,21 +83,7 @@ $id = addslashes($_SESSION['usr_id']);
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                <ul>
-                                    <!-- <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">Services</a>
-                                        <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul>
-                                        </li>
-                                    <li><a href="post.html">Blog</a></li> -->
-                                    <!-- <li><a href="contact.html">Contact</a></li> -->
-                                    <!-- <li><a href="login.html">Login</a></li> -->
-                                </ul>
+
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -125,7 +111,7 @@ $id = addslashes($_SESSION['usr_id']);
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">User DashBoard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Account details</li>
                             </ol>
                         </nav>
                     </div>
@@ -136,14 +122,14 @@ $id = addslashes($_SESSION['usr_id']);
     <!-- ##### Breadcrumb Area End ##### -->
 
     <!-- ##### Elements Area Start ##### -->
-    <section class="elements-area section-padding-100-0">
+    <section class="elements-area section-padding-70-0">
 
 
         <!-- ========== Web Icons ========== -->
         <div class="col-12">
             <div class="elements-title mb-30">
-                <div class="line"></div>
-                <h2>User DashBoard</h2>
+                <!-- <div class="line"></div> -->
+                <!-- <h2>User DashBoard</h2> -->
             </div>
         </div>
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
@@ -213,16 +199,11 @@ $id = addslashes($_SESSION['usr_id']);
                         </section>
                     </article>
                 </div>
-                <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
-                    <i class="icon-purse"></i>
-                    <a href="customer.php"> <span>Dash Board</span></a>
-                </div> -->
+
+
+
             </div>
-
-
-
-        </div>
         </div>
 
         </div>

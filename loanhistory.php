@@ -82,21 +82,7 @@ $id = addslashes($_SESSION['usr_id']);
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                <ul>
-                                    <!-- <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">Services</a>
-                                        <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul>
-                                        </li>
-                                    <li><a href="post.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="login.html">Login</a></li> -->
-                                </ul>
+                                
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -124,7 +110,7 @@ $id = addslashes($_SESSION['usr_id']);
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">DashBoard</li>
+                                <li class="breadcrumb-item active" aria-current="page">loan history</li>
                             </ol>
                         </nav>
                     </div>
@@ -135,14 +121,14 @@ $id = addslashes($_SESSION['usr_id']);
     <!-- ##### Breadcrumb Area End ##### -->
 
     <!-- ##### Elements Area Start ##### -->
-    <section class="elements-area section-padding-100-0">
+    <section class="elements-area section-padding-70-0">
 
 
         <!-- ========== Web Icons ========== -->
         <div class="col-12">
             <div class="elements-title mb-30">
-                <div class="line"></div>
-                <h2>User DashBoard</h2>
+                <!-- <div class="line"></div>
+                <h2>User DashBoard</h2> -->
             </div>
         </div>
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
@@ -185,11 +171,7 @@ $id = addslashes($_SESSION['usr_id']);
                                         </thead>
                                         <?php
 	
-		// $in_sql = "SELECT * FROM accounts WHERE customerid = $id";
-		// $ru_sql = mysqli_query($con, $in_sql);
-
-		// $rows = mysqli_fetch_array($ru_sql);
-		// $accno = $rows['accno'];
+		
 
 		$ins_sql = "SELECT * FROM loan ";
 		$run_sql = mysqli_query($con, $ins_sql);
@@ -214,12 +196,7 @@ $id = addslashes($_SESSION['usr_id']);
 	?>
                                     </table>
                                 </b>
-                                <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-
-                                    <i class="icon-purse"></i>
-                                    <a href="customer.php"> <span>Dash Board</span></a>
-                                </div> -->
-
+                                
                             </section>
                         </article>
                     </div>
@@ -278,7 +255,6 @@ $id = addslashes($_SESSION['usr_id']);
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services &amp; Offers</a></li>
-                                <!-- <li><a href="">Portfolio Presentation</a></li> -->
                                 <li><a href="post.php">The News</a></li>
                             </ul>
                         </nav>
@@ -286,7 +262,7 @@ $id = addslashes($_SESSION['usr_id']);
                 </div>
 
                 <!-- Single Footer Widget -->
-                <!-- <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget mb-100">
                         <h5 class="widget-title">Solutions</h5>
                         
@@ -300,7 +276,7 @@ $id = addslashes($_SESSION['usr_id']);
                             </ul>
                         </nav>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- Single Footer Widget -->
                 <div class="col-12 col-sm-6 col-lg-3">
@@ -371,12 +347,10 @@ $id = addslashes($_SESSION['usr_id']);
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="#">
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;<script>
                                     document.write(new Date().getFullYear());
                                     </script> All rights reserved
                                 </a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
                     </div>

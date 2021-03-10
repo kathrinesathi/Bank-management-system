@@ -20,10 +20,10 @@ if (isset($_POST['login'])) {
 
 		if($_SESSION['usr_id']==1){
 
-			header("Location: admin.php");
+			header("Location: customer.php");
 		}else{
 			
-			header("Location: customer.php");
+			header("Location: admin.php");
 		}
 	} else {
 		$errormsg = "Incorrect Email or Password!!!";

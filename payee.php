@@ -141,7 +141,7 @@ include 'includes/dbconnect.php';
                         <div class="contact">
                             <!-- <a href="#"><img src="img/core-img/call2.png" alt=""> +92123456789 </a> -->
                             <?php if (isset($_SESSION['usr_id']))  ?>
-                            <a href="logout.php">Log Out</a>
+                            <a href="logout.php">Log</a>
                         </div>
                     </nav>
                 </div>

@@ -50,8 +50,11 @@ include 'includes/dbconnect.php';
 
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png" alt=""> <span>10 th street Avenue, chennai, IND</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@bb.com"><img src="img/core-img/message.png" alt=""> <span>info@bb.com</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom"
+                                title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png"
+                                    alt=""> <span>10 th street Avenue, chennai, IND</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@bb.com"><img
+                                    src="img/core-img/message.png" alt=""> <span>info@bb.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -69,10 +72,10 @@ include 'includes/dbconnect.php';
                         </div>
                         <!-- Contact -->
                         <div class="contact">
-                       
+
                             <?php if (isset($_SESSION['usr_id']))  ?>
-				            <a href="logout.php">Log Out</a>
-				            
+                            <a href="logout.php">Log Out</a>
+
                         </div>
                     </nav>
                 </div>
@@ -81,110 +84,112 @@ include 'includes/dbconnect.php';
 
     </header>
     <!-- ##### Header Area End ##### -->
-                <!-- ========== Web Icons ========== -->
-                <div class="col-12">
-                    <div class="elements-title mb-30">
-                          <section class="elements-area section-padding-100-0">
-                        <h2>Admin DashBoard</h2>
-                    </div>
-                </div>
-                <div>
-                <h3>Welcome, <?php echo $_SESSION['usr_name']; ?></h3>
-</div>
-                <div class="col-12 mb-70">
-                    <div class="row">                        
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                            <i class="fa fa-user"></i>
-                               
-                             <a href="addcustomer.php"> <span>Add Customer</span></a>  
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                            <i class="icon-purse"></i>
-                                <a href="addaccount.php"><span>Create Account</span></a>
-                                
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-smartphone-1"></i>
-                                <a href="grantloan.php"><span>Grant Loan</span></a> 
-                                
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-check"></i>
-                                <a href="viewaccounts.php"><span>View Accounts</span></a> 
-                               
-                            </div>
-                        </div>                        
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                           
-                             <i class="icon-invoice"></i>
-                             <a href="depositmoney.php"><span>Deposit Money</span></a> 
-                            
-                            </div>
-                        </div>   
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-smartphone"></i>
-                                <a href="withdrawmoney.php"><span>Withdraw Money</span></a> 
-                        
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-calculator"></i>
-                                <a href="viewloans.php"><span>View Loans</span></a> 
-                                
-                            </div>
-                        </div>
-                     
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-credit-card-1"></i>
-                                <a href="card.php"><span>fastag</span></a> 
-                                
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-                
-            </div>
+    <!-- ========== Web Icons ========== -->
+    <div class="col-12">
+        <div class="elements-title mb-30">
+            <section class="elements-area section-padding-100-0">
+                <h2>Admin DashBoard</h2>
         </div>
-      
-   
-        <!-- Copywrite Area -->
-        <div class="copywrite-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
-                            <!-- Footer Logo -->
-                            <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+    </div>
+    <div>
+        <h3>Welcome, <?php echo $_SESSION['usr_name']; ?></h3>
+    </div>
+    <div class="col-12 mb-70">
+        <div class="row">
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="fa fa-user"></i>
 
-                            <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-</p>
-                        </div>
+                    <a href="addcustomer.php"> <span>Add Customer</span></a>
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-purse"></i>
+                    <a href="addaccount.php"><span>Create Account</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-check"></i>
+                    <a href="viewaccounts.php"><span>View Accounts</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-smartphone-1"></i>
+                    <a href="grantloan.php"><span>Grant Loan</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+
+                    <i class="icon-invoice"></i>
+                    <a href="depositmoney.php"><span>Deposit Money</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-smartphone"></i>
+                    <a href="withdrawmoney.php"><span>Withdraw Money</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-calculator"></i>
+                    <a href="viewloans.php"><span>View Loans</span></a>
+
+                </div>
+            </div>
+
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-credit-card-1"></i>
+                    <a href="card.php"><span>fastag</span></a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+
+    <!-- Copywrite Area -->
+    <div class="copywrite-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
+                        <!-- Footer Logo -->
+                        <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+
+                        <!-- Copywrite Text -->
+                        <p class="copywrite-text"><a href="#">
+                                Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                                </script> All rights reserved </a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
     <!-- ##### All Javascript Script ##### -->

@@ -98,14 +98,14 @@ include 'includes/dbconnect.php';
                             <div class="single-icons mb-30">
                             <i class="fa fa-user"></i>
                                
-                             <a href="addaccount.php"> <span>Add Customer</span></a>  
+                             <a href="addcustomer.php"> <span>Add Customer</span></a>  
                             </div>
                         </div>
                         <!-- Single Icons -->
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div class="single-icons mb-30">
                             <i class="icon-purse"></i>
-                                <a href="deleteaccount.php"><span>Create Account</span></a>
+                                <a href="addaccount.php"><span>Create Account</span></a>
                                 
                             </div>
                         </div>

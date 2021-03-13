@@ -6,28 +6,41 @@ include 'includes/dbconnect.php';
 
 	if(isset($_POST['submit'])){
 
-		$accno = $_POST['accno'];
-		// $accemail = $_POST['accemail'];
+        $iban = $_POST['iban'];
+		$fname = $_POST['fname'];
+		$lname = $_POST['lname'];
+    	$emailid = $_POST['emailid'];
+    	$password = $_POST['password'];
+    	$pin = $_POST['pin'];
+		$accstatus = $_POST['accstatus'];
+		$city= $_POST['city'];
+		$state= $_POST['state'];
+		$country= $_POST['country'];
+		$accdate = date('y-m-d');
 
-		$i_sql = "SELECT * FROM accounts WHERE accno = '".$accno."'";
-		$r_sql = mysqli_query($con,$i_sql);
-
-		$rows = mysqli_fetch_array($r_sql);
-
-		$accno1 = $rows['accno'];
-
-		if($accno1==$accno){
 
 
-			$ins_sql = "DELETE FROM accounts WHERE accno ='".$accno."'";
-			$run_sql = mysqli_query($con,$ins_sql);
-			// $in_sql = "DELETE FROM customers WHERE emailid ='".$accemail."'";
-			// $ru_sql = mysqli_query($con,$in_sql);
+		// $accno = $_POST['accno'];
+		// $customerid = $_POST['customerid'];
+    	// accpassword = $_POST['password'];
+        // $accbalance = $_POST['accountbalance'];
+	
+		// $ins_sql = "INSERT INTO customers (iban, firstname, lastname, emailid, password, transpassword, accstatus,city, state, country, accopendate) VALUES 
+		// 			('".$iban."', '".$fname."', '".	$lname."', '".$emailid."', '".$password."', '".$pin."', '".$accstatus."', '".$city."', '".$state."', '".$country."' )";
+		// $run_sql = mysqli_query($con,$ins_sql);
+        // $success = "Account added successfully!";
 
-			$success = "Account deleted successfully!";
+		$temp = mysqli_affected_rows($con);
+		if($temp>0){
+
+            $ins_sql = "INSERT INTO customers (iban, firstname, lastname, emailid, password, transpassword, accstatus,city, state, country, accopendate) VALUES 
+            ('".$iban."', '".$fname."', '".	$lname."', '".$emailid."', '".$password."', '".$pin."', '".$accstatus."', '".$city."', '".$state."', '".$country."' )";
+            
+            $run_sql = mysqli_query($con,$ins_sql);
+			$success = "Account added successfully!";
 		}else{
 
-			$success = "Account number and email does not match!";
+			$success = "Something went wrong!";
 		}
 
 	}
@@ -112,19 +125,7 @@ include 'includes/dbconnect.php';
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <!-- <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">Services</a>
-                                        <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul>
-                                        </li>
-                                    <li><a href="post.html">Blog</a></li> -->
-                                    <!-- <li><a href="contact.html">Contact</a></li> -->
-                                    <!-- <li><a href="login.html">Login</a></li> -->
+
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -170,8 +171,7 @@ include 'includes/dbconnect.php';
         <!-- ========== Web Icons ========== -->
         <div class="col-12">
             <div class="elements-title mb-30">
-                <!-- <div class="line"></div>
-                <h2>Admin DashBoard</h2> -->
+
             </div>
         </div>
         <h3>Admin <?php echo $_SESSION['usr_name']; ?></h3>
@@ -181,189 +181,123 @@ include 'includes/dbconnect.php';
 
 
 
-                <!-- Single Icons -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-icons mb-30">
-                        <i class="fa fa-user"></i>
-                        <a href=#><span>Add Customer</span></a>
-
-                    </div>
+       <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                   <i class="fa fa-user"></i>
+                     <a href=#><span>Add Customer</span></a>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-icons mb-30">
-                        <i class="icon-diamond"></i>
-                        <a href="admin.php"> <span>Dash Board</span></a>
-                    </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-diamond"></i>
+                    <a href="admin.php"> <span>Dash Board</span></a>
                 </div>
+            </div>
 
 
-                <div class="container">
-                    <div class="container">
-                        <article class="row">
-                            <section class="col-lg-8">
-                                <div class="page-header">
-                                    <h2>Please fill !!!</h2>
-                                </div>
-                                <form class="form-horizontal" action="deleteaccount.php" method="post" role="form">
-                                    <b>
-                                        <div class="form-group">
-
-                                            <label>IBAN number :</label><br>
-                                            <input class="form-control" placeholder=IBAN name="iban" type="text"
-                                                required />
-
-
-                                        </div>
-
-                                        <div class="form-group">
-
-
-                                            <label>First Name :</label><br>
-                                            <input class="form-control" placeholder=firstname name="firstname"
-                                                type="text" required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Last Name :
-                                            </label><br>
-                                            <input class="form-control" placeholder=lastname name="lastname" type="text"
-                                                required />
-
-                                        </div>
-                                        <!-- <div class="form-group">
-
-                                            <label>Gender :</label>
-
-                                            <div class="flex-container-radio">
-                                                <div class="container">
-                                                    <input type="radio" name="gender" value="male" id="male-radio"
-                                                        checked>
-                                                    <label id="radio-label" for="male-radio"><span
-                                                            class="radio">Male</span></label>
-                                                </div>
-                                                <div class="container">
-                                                    <input type="radio" name="gender" value="female" id="female-radio">
-                                                    <label id="radio-label" for="female-radio"><span
-                                                            class="radio">Female</span></label>
-                                                </div>
-                                                <div class="container">
-                                                    <input type="radio" name="gender" value="others" id="other-radio">
-                                                    <label id="radio-label" for="other-radio"><span
-                                                            class="radio">Others</span></label>
-                                                </div>
-                                            </div>
-                                        </div> -->
-
-                                        <!-- <div class="form-group">
-
-                                            <label>Date of Birth :</label><br>
-                                            <input class="form-control" name="dob" type="text" placeholder="yyyy-mm-dd"
-                                                required />
-
-                                        </div> -->
-
-                                        <!-- <div class="form-group">
-
-                                            <label>Citizenship No :</label><br>
-                                            <input class="form-control" name="aadhar" type="text" required />
-
-                                        </div> -->
-
-                                        <div class="form-group">
-
-                                            <label>Email-ID :</label><br>
-                                            <input class="form-control" placeholder=email id name="emailid" type="text"
-                                                required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Password :
-                                            </label><br>
-                                            <input class="form-control" placeholder=password name="password" type="text"
-                                                required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Pin :
-                                            </label><br>
-                                            <input class="form-control" placeholder=PIN name="transpassword" type="text"
-                                                required />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Account Status:</label>
+            <div class="container">
+                 <div class="container">
+                    <article class="row">
+                        <section class="col-sm-8">
+                            <div class="page-header">
+                                <h2>Please fill !!!</h2>
+                            </div>
+                             <form class="form-horizontal" action="addcustomer.php" method="post" role="form">
+                                <b>
+                                    <div class="form-group">
+                                        <label for="number" class="col-sm-3 control-label">IBAN number :</label>
                                             <div class="col-sm-8">
-                                                <select class="form-control" name="acctype" id="acctype">
+                                                <input type="text" name="iban" class="form-control"
+                                                    placeholder="Enter iban number" id="iban" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number" class="col-sm-3 control-label">First Name :</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="fname" class="form-control"
+                                                    placeholder="Enter customer's first name" id="fname" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number" class="col-sm-3 control-label">Last Name :</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="lname" class="form-control"
+                                                    placeholder="Enter customer's last name" id="lname" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">Email-Id :</label>
+                                            <div class="col-sm-8">
+                                                <input type="email" name="emailid" class="form-control"
+                                                    placeholder="Enter customer's last name" id="emailid" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">Password :</label>
+                                            <div class="col-sm-8">
+                                                <input type="password" name="password" class="form-control"
+                                                    placeholder="Enter the password" id="password" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">Pin :</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="pin" class="form-control"
+                                                    placeholder="Enter the pin" id="pin" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">Account Status:</label>
+                                            <div class="col-sm-8">
+                                            <select class="form-control" name="accstatus" id="accstatus">
                                                     <option>Savings</option>
                                                     <option>Current</option>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>City:</label><br>
-                                            <input class="form-control" placeholder=city name="city" required />
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>State :</label>
-                                            <input class="form-control" placeholder=state name="state" type="text"
-                                                required />
-                                        </div>
-
-                                        <!-- <div class="form-group">
-                                            <select name="branch">
-                                                <option value="delhi">Kathmandu</option>
-                                                <option value="delhi">Delhi</option>
-                                                <option value="newyork">New York</option>
-                                                <option value="paris">Paris</option>
-                                                <option value="riyadh">Riyadh</option>
-                                                <option value="moscow">Moscow</option>
-                                            </select>
-
-                                        </div> -->
-
-                                        <div class="form-group">
-
-                                            <label>Country :</label><br>
-                                            <input class="form-control" placeholder=country name="country" type="text"
-                                                required />
-                                        </div>
-
-                                        <!-- <div class="form-group">
-
-                                            <label>Username :</label><br>
-                                            <input class="form-control" name="cus_uname" type="text" required />
-                                        </div> -->
-
-
-
-
-                                        <div class="form-group">
-
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">City:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="city" class="form-control"
+                                                    placeholder="Enter city" id="city" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">State:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="state" class="form-control"
+                                                    placeholder="Enter state" id="state" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <label for="text" class="col-sm-3 control-label">Country:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="country" class="form-control"
+                                                    placeholder="Enter state" id="country" required>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-8">
                                             <input type="submit" id="submit" name="submit" value="Submit"
-                                                class="btn btn-block btn-primary">
+                                                    class="btn btn-primary mt-50 ">
                                             <input type="reset" id="reset" name="submit" value="Reset"
-                                                class="btn btn-block btn-warning">
+                                                    class="btn btn-danger mt-50">
+                                       </div>
+                                    </div>  
+                                </b>
+                            </form>      
+                       </article> 
+                    </section>                
+                </div>
+             </div>
 
-
-                                        </div>
+             <div class="form-group">
+                <label class="col-sm-3 control-label"></label>
+                    <div class="col-sm-8">
+                        <h4><?php echo $success ?></h4>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="name" class="col-sm-3 control-label">Email-address *</label>
-                            <div class="col-sm-8">
-                                  <input  class="form-control"type="email" name="accemail" class="form-control" placeholder="Enter Email-address" id="accemail" required>
-                            </div>
-                    </div> -->
-
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label"></label>
-                        <div class="col-sm-8">
-                            <h4><?php echo $success ?></h4>
-                        </div>
-                    </div>
-                    </b>
-
-
-                    </form>
-    </section>
-    </article>
-
+            </div>
 
 
     <!-- ##### Elements Area End ##### -->
@@ -380,12 +314,10 @@ include 'includes/dbconnect.php';
 
                         <!-- Copywrite Text -->
                         <p class="copywrite-text"><a href="#">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
                                 </script> All rights reserved
                             </a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ $id = addslashes($_SESSION['usr_id']);
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Credit.com - Credit Company </title>
+    <title>BB Bank.com - BB Company</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -50,10 +50,10 @@ $id = addslashes($_SESSION['usr_id']);
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center">
                             <a href="#" data-toggle="tooltip" data-placement="bottom"
-                                title="25 th Street Avenue, Karachi, PAK"><img src="img/core-img/placeholder.png"
-                                    alt=""> <span>25 th Street Avenue, Karachi, PAK</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@credit.com"><img
-                                    src="img/core-img/message.png" alt=""> <span>info@credit.com</span></a>
+                                title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png"
+                                    alt=""> <span>10 th street Avenue, chennai, IND</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@bb.com"><img
+                                    src="img/core-img/message.png" alt=""> <span>info@bb.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ $id = addslashes($_SESSION['usr_id']);
                                             </ul>
                                         </li>
                                     <li><a href="post.html">Blog</a></li> -->
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <!-- <li><a href="contact.html">Contact</a></li> -->
                                     <!-- <li><a href="login.html">Login</a></li> -->
                                 </ul>
                             </div>
@@ -105,7 +105,7 @@ $id = addslashes($_SESSION['usr_id']);
                         <div class="contact">
                             <!-- <a href="#"><img src="img/core-img/call2.png" alt=""> +92123456789 </a> -->
                             <?php if (isset($_SESSION['usr_id']))  ?>
-                            <li><a href="logout.php">Log Out</a></li>
+                            <a href="logout.php">Log Out</a>
                         </div>
                     </nav>
                 </div>
@@ -124,7 +124,7 @@ $id = addslashes($_SESSION['usr_id']);
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">DashBoard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Transaction</li>
                             </ol>
                         </nav>
                     </div>
@@ -135,14 +135,14 @@ $id = addslashes($_SESSION['usr_id']);
     <!-- ##### Breadcrumb Area End ##### -->
 
     <!-- ##### Elements Area Start ##### -->
-    <section class="elements-area section-padding-100-0">
+    <section class="elements-area section-padding-70-0">
 
 
         <!-- ========== Web Icons ========== -->
         <div class="col-12">
             <div class="elements-title mb-30">
-                <div class="line"></div>
-                <h2>User DashBoard</h2>
+                <!-- <div class="line"></div>
+                <h2>User DashBoard</h2> -->
             </div>
         </div>
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
@@ -155,13 +155,17 @@ $id = addslashes($_SESSION['usr_id']);
                 <!-- Single Icons -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="single-icons mb-30">
-                        <i class="icon-diamond"></i>
-                        <a href="transactions.php"><span>Transactions</span></a>
+                        <i class="icon-check"></i>
+                        <a href=#><span>Transactions</span></a>
 
                     </div>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="single-icons mb-30">
+                        <i class="icon-diamond"></i>
+                        <a href="customer.php"> <span>Dash Board</span></a>
+                    </div>
+                </div>
 
 
                 <div class="container">
@@ -210,22 +214,15 @@ $id = addslashes($_SESSION['usr_id']);
     ?>
 
                             </table>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
                                 <i class="icon-purse"></i>
                                 <a href="customer.php"> <span>Dash Board</span></a>
-                            </div>
+                            </div> -->
 
                         </section>
                     </article>
                 </div>
-
-
-
-
-
-
-
             </div>
         </div>
 

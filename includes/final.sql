@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2021 at 05:14 PM
+-- Generation Time: Mar 14, 2021 at 03:07 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -46,7 +46,6 @@ CREATE TABLE `accounts` (
   `customerid` int(10) NOT NULL,
   `accstatus` varchar(25) NOT NULL,
   `accopendate` date NOT NULL,
-  `accounttype` varchar(25) NOT NULL,
   `accountbalance` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -54,9 +53,11 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`accno`, `customerid`, `accstatus`, `accopendate`, `accounttype`, `accountbalance`) VALUES
-('211418205059', 2, 'saving', '2021-03-01', 'saving', '42000.00'),
-('211418205067', 1, 'saving', '2021-03-01', 'saving', '59000.00');
+INSERT INTO `accounts` (`accno`, `customerid`, `accstatus`, `accopendate`, `accountbalance`) VALUES
+('211418205042', 4, 'Savings', '2021-03-13', '9000.00'),
+('211418205049', 3, 'current', '2021-03-13', '100000.00'),
+('211418205059', 2, 'saving', '2021-03-01', '126000.00'),
+('211418205067', 1, 'saving', '2021-03-01', '55000.00');
 
 -- --------------------------------------------------------
 
@@ -99,17 +100,20 @@ CREATE TABLE `customers` (
   `city` varchar(25) NOT NULL,
   `state` varchar(25) NOT NULL,
   `country` varchar(25) NOT NULL,
-  `accopendate` date NOT NULL,
-  `lastlogin` datetime NOT NULL
+  `accopendate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`customerid`, `iban`, `firstname`, `lastname`, `emailid`, `password`, `transpassword`, `accstatus`, `city`, `state`, `country`, `accopendate`, `lastlogin`) VALUES
-(1, 'KH12345', 'kathrine', 'sathi', 'kathrinesathi18@gmail.com', '123456', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01', '2021-03-03 16:36:51'),
-(2, 'KH12345', 'Hari', 'Prasad', 'hari@gmail.com', '123456', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01', '2021-03-02 13:59:03');
+INSERT INTO `customers` (`customerid`, `iban`, `firstname`, `lastname`, `emailid`, `password`, `transpassword`, `accstatus`, `city`, `state`, `country`, `accopendate`) VALUES
+(1, 'KH12345', 'kathrine', 'sathi', 'kathrinesathi18@gmail.com', '123456', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01'),
+(2, 'KH12345', 'Hari', 'Prasad', 'hari@gmail.com', '123456', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01'),
+(3, 'KH12345', 'karthikeyan', ' ', 'karthi@gmail.com', '123456', '1111', 'current', 'chennai', 'tamilnadu', 'india', '2021-03-02'),
+(4, 'KH12345', 'sooraj', ' ', 'sooraj@gmail.com', '123456', '1111', 'savings', 'thiruvarur', 'tamilnadu', 'india', '2021-03-02'),
+(5, 'KH12345', 'Selva', 'subha', 'subha@gmail.com', '123456', '1111', 'Savings', 'Chennai', 'Tamilnadu', 'India', '2021-03-14'),
+(6, 'KH12345', 'susil', 'kumar', 'susil@gmail.com', '123456', '1111', 'Savings', 'Chennai', 'Tamilnadu', 'India', '2021-03-14');
 
 -- --------------------------------------------------------
 
@@ -143,7 +147,7 @@ INSERT INTO `employees` (`empid`, `empname`, `password`, `emailid`, `contactno`,
 CREATE TABLE `loan` (
   `loanid` int(10) NOT NULL,
   `loantype` varchar(25) NOT NULL,
-  `loanamount` varchar(25) NOT NULL,
+  `loanamount` float(10,2) NOT NULL,
   `customerid` int(12) NOT NULL,
   `interest` float(10,2) NOT NULL,
   `startdate` date NOT NULL
@@ -154,7 +158,8 @@ CREATE TABLE `loan` (
 --
 
 INSERT INTO `loan` (`loanid`, `loantype`, `loanamount`, `customerid`, `interest`, `startdate`) VALUES
-(1, 'car loan', '500000.00', 1, 1234.00, '2021-03-01');
+(1, 'car loan', 500000.00, 1, 1234.00, '2021-03-01'),
+(52, 'Education loan', 300000.00, 2, 1000.00, '2021-03-01');
 
 -- --------------------------------------------------------
 
@@ -209,12 +214,10 @@ CREATE TABLE `registered_payee` (
 --
 
 INSERT INTO `registered_payee` (`payeename`, `accno`, `accounttype`, `iban`) VALUES
-('HariPrasaad', '211418205059', 'Current', 'KH12345'),
+('HariPrasaad', '211418205067', 'Savings', 'KH12345'),
 ('sooraj', '211418205059', 'Current', 'KH12345'),
-('Kathrine', '211418205059', 'Savings', 'KH12345'),
-('Karthi', '211418205059', 'Savings', 'KH12345'),
-('vikky', '211418205059', 'Current', 'KH12345'),
-('HariPrasaad', '211418205067', 'Savings', 'KH12345');
+('Karthi', '211418205059', 'Current', 'KH12345'),
+('Kathrine', '211418205059', 'Current', 'KH12345');
 
 -- --------------------------------------------------------
 
@@ -223,18 +226,30 @@ INSERT INTO `registered_payee` (`payeename`, `accno`, `accounttype`, `iban`) VAL
 --
 
 CREATE TABLE `transactions` (
-  `paymentdate` datetime NOT NULL,
-  `payeeid` int(11) NOT NULL,
-  `receiveid` int(11) NOT NULL,
-  `amount` decimal(10,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `payeeid` varchar(200) NOT NULL,
+  `paymentdate` date NOT NULL,
+  `receiveid` varchar(200) NOT NULL,
+  `amount` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`paymentdate`, `payeeid`, `receiveid`, `amount`) VALUES
-('2021-03-02 14:32:40', 1, 2, '2000');
+INSERT INTO `transactions` (`payeeid`, `paymentdate`, `receiveid`, `amount`) VALUES
+('2', '2021-03-01', '3', 2000),
+('2', '2021-03-02', '4', 5000),
+('2147483647', '2021-03-14', '2147483647', 2000),
+('2147483647', '2021-03-14', '2147483647', 2000),
+('2147483647', '2021-03-14', '2147483647', 4000),
+('2147483647', '2021-03-14', '2147483647', 4000),
+('2147483647', '2021-03-14', '2147483647', 4000),
+('2147483647', '2021-03-14', '2147483647', 4000),
+('2147483647', '2021-03-14', '2147483647', 4000),
+('211418205059', '2021-03-14', '211418205049', 4000),
+('2', '2021-03-14', '211418205067', 5000),
+('2', '2021-03-14', '211418205067', 5000),
+('2', '2021-03-14', '211418205049', 5000);
 
 --
 -- Indexes for dumped tables
@@ -293,13 +308,6 @@ ALTER TABLE `registered_payee`
   ADD KEY `fk2_Register_Payee` (`iban`);
 
 --
--- Indexes for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD KEY `fk1_Transactions` (`payeeid`),
-  ADD KEY `fk2_Transactions` (`receiveid`);
-
---
 -- Constraints for dumped tables
 --
 
@@ -327,13 +335,6 @@ ALTER TABLE `loan`
 ALTER TABLE `registered_payee`
   ADD CONSTRAINT `fk1_Register_Payee` FOREIGN KEY (`accno`) REFERENCES `accounts` (`accno`),
   ADD CONSTRAINT `fk2_Register_Payee` FOREIGN KEY (`iban`) REFERENCES `branch` (`iban`);
-
---
--- Constraints for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD CONSTRAINT `fk1_Transactions` FOREIGN KEY (`payeeid`) REFERENCES `customers` (`customerid`),
-  ADD CONSTRAINT `fk2_Transactions` FOREIGN KEY (`receiveid`) REFERENCES `customers` (`customerid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

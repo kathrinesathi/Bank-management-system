@@ -2,7 +2,6 @@
 session_start();
 include_once 'includes/dbconnect.php';
 $id = addslashes($_SESSION['usr_id']);
-// echo $id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +14,7 @@ $id = addslashes($_SESSION['usr_id']);
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>BB Bank.com - BB Company </title>
+    <title>Credit.com - Credit Company </title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -51,10 +50,10 @@ $id = addslashes($_SESSION['usr_id']);
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center">
                             <a href="#" data-toggle="tooltip" data-placement="bottom"
-                                title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png"
-                                    alt=""> <span>10 th street Avenue, chennai, IND</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@bb.com"><img
-                                    src="img/core-img/message.png" alt=""> <span>info@bb.com</span></a>
+                                title="25 th Street Avenue, Karachi, PAK"><img src="img/core-img/placeholder.png"
+                                    alt=""> <span>25 th Street Avenue, Karachi, PAK</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@credit.com"><img
+                                    src="img/core-img/message.png" alt=""> <span>info@credit.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +82,21 @@ $id = addslashes($_SESSION['usr_id']);
 
                             <!-- Nav Start -->
                             <div class="classynav">
-
+                                <ul>
+                                    <!-- <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="services.html">Services</a>
+                                        <div class="dropdown">
+                                            <ul class="single-mega cn-col-4">
+                                                <li><a href="#">Portfolio 1</a></li>
+                                                <li><a href="#">Portfolio 2</a></li>
+                                                <li><a href="#">Portfolio 3</a></li>
+                                            </ul>
+                                        </li>
+                                    <li><a href="post.html">Blog</a></li> -->
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <!-- <li><a href="login.html">Login</a></li> -->
+                                </ul>
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -92,7 +105,7 @@ $id = addslashes($_SESSION['usr_id']);
                         <div class="contact">
                             <!-- <a href="#"><img src="img/core-img/call2.png" alt=""> +92123456789 </a> -->
                             <?php if (isset($_SESSION['usr_id']))  ?>
-                            <a href="logout.php">Log Out</a>
+                            <li><a href="logout.php">Log Out</a></li>
                         </div>
                     </nav>
                 </div>
@@ -111,7 +124,7 @@ $id = addslashes($_SESSION['usr_id']);
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">loan history</li>
+                                <li class="breadcrumb-item active" aria-current="page">DashBoard</li>
                             </ol>
                         </nav>
                     </div>
@@ -122,14 +135,14 @@ $id = addslashes($_SESSION['usr_id']);
     <!-- ##### Breadcrumb Area End ##### -->
 
     <!-- ##### Elements Area Start ##### -->
-    <section class="elements-area section-padding-70-0">
+    <section class="elements-area section-padding-100-0">
 
 
         <!-- ========== Web Icons ========== -->
         <div class="col-12">
             <div class="elements-title mb-30">
-                <!-- <div class="line"></div>
-                <h2>User DashBoard</h2> -->
+                <div class="line"></div>
+                <h2>User DashBoard</h2>
             </div>
         </div>
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
@@ -142,74 +155,79 @@ $id = addslashes($_SESSION['usr_id']);
                 <!-- Single Icons -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="single-icons mb-30">
-                        <i class="icon-atm-machine-1"></i>
-                        <a href="loanhistory.php"><span>Loan History</span></a>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-icons mb-30">
                         <i class="icon-diamond"></i>
-                        <a href="customer.php"> <span>Dash Board</span></a>
+                        <a href="transactions.php"><span>Transactions</span></a>
+
                     </div>
                 </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 
                 <div class="container">
-                    <div class="container">
-                        <article class="row">
-                            <section class="col-lg-8">
-                                <div class="page-header">
-                                    <h2>Loan payments</h2>
-                                </div>
-                                <b>
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <th>Loan ID</th>
-                                            <th>Type</th>
-                                            <th>Amount</th>
-                                            <th>Customer ID</th>
-                                            <th>Interest</th>
-                                            <th>Dated</th>
-                                        </thead>
-                                        <?php
+                    <article class="row">
+                        <section class="col-lg-8">
+                            <div class="page-header">
+                                <h2>Transaction Details</h2>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <!-- <th>Transaction ID</th> -->
+                                    <th>Payment Date</th>
+                                    <th>Sender ID</th>
+                                    <th>Receiver ID</th>
+                                    <th>Amount</th>
+                                    <!-- <th>Status</th> -->
+                                </thead>
+                                <?php
 	
-    
-		$ins_sql = "SELECT * FROM loan WHERE customerid = '$id' ";
-		$run_sql = mysqli_query($con, $ins_sql);
-		while($rows = mysqli_fetch_array($run_sql)){
+		$in_sql = "SELECT * FROM transactions WHERE payeeid = '$id'";
+		$ru_sql = mysqli_query($con, $in_sql);
+
+		// $rows = mysqli_fetch_array($ru_sql);
+		// $accno = $rows['payeeid'];
+
+		// $ins_sql = "SELECT * FROM transactions WHERE receiveid = '$accno'";
+		// $run_sql = mysqli_query($con, $ins_sql);
+		while($rows = mysqli_fetch_array($ru_sql)){
 
 			echo '
 
 				<tbody>
-                          <tr>
-                          <td>'.$rows['loanid'].'</td>
-					        <td>'.$rows['loantype'].'</td>
-                            <td>'.$rows['loanamount'].'</td>
-                            <td>'.$rows['customerid'].'</td>
-                            <td>'.$rows['interest'].'</td>
-					        <td>'.$rows['startdate'].'</td>
+					      <tr>
+					        
+                            <td>'.$rows['paymentdate'].'</td>
+                            <td>'.$rows['payeeid'].'</td>
+                            <td>'.$rows['receiveid'].'</td>
+                            <td>'.$rows['amount'].'</td>
+                            
 					      </tr>
 					    </tbody>
 				
 			';
 
 		}
-	?>
-                                    </table>
-                                </b>
+    ?>
 
-                            </section>
-                        </article>
-                    </div>
+                            </table>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
+                                <i class="icon-purse"></i>
+                                <a href="customer.php"> <span>Dash Board</span></a>
+                            </div>
 
-
-
-
-
-
-
+                        </section>
+                    </article>
                 </div>
+
+
+
+
+
+
+
             </div>
+        </div>
 
         </div>
         </div>
@@ -255,17 +273,18 @@ $id = addslashes($_SESSION['usr_id']);
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services &amp; Offers</a></li>
-                                <li><a href="post.php">The News</a></li>
+                                <!-- <li><a href="#">Portfolio Presentation</a></li> -->
+                                <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
 
                 <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                <!-- <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget mb-100">
                         <h5 class="widget-title">Solutions</h5>
-
+                        
                         <nav>
                             <ul>
                                 <li><a href="#">Our Loans</a></li>
@@ -276,7 +295,7 @@ $id = addslashes($_SESSION['usr_id']);
                             </ul>
                         </nav>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Single Footer Widget -->
                 <div class="col-12 col-sm-6 col-lg-3">
@@ -347,10 +366,12 @@ $id = addslashes($_SESSION['usr_id']);
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="#">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;<script>
                                     document.write(new Date().getFullYear());
                                     </script> All rights reserved
                                 </a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
                     </div>

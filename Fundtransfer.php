@@ -43,18 +43,18 @@ include 'includes/dbconnect.php';
 
 						$owner_updated = $owner_balance - $amount;
 
-						$sql4 = "UPDATE accounts
-								SET accountbalance = $owner_updated
-								WHERE accno = '$owner_no'";
+						$sql4 = "UPDATE accounts SET accountbalance = $owner_updated WHERE accno = '$owner_no'";
 						$run4 = mysqli_query($con, $sql4);
-
-						$sql5 = "INSERT INTO transactions(transactionid, paymentdate, payeeid,  receiveid, amount ) VALUES('".$date."','".$owner_no."', '".$accno."','".$amount."')";
+// echo $date;   echo $owner_no;   echo $name;   echo $amount;
+						$sql5 = "INSERT INTO transactions (payeeid, paymentdate,  receiveid, amount ) VALUES ('".$id."','".$date."', '".$accno."','".$amount."')";
 						$run5 = mysqli_query($con, $sql5);
 
 						$success = "Transferred succesfully!";
+                        header("refresh:2");
 					}else{
 
 						$success = "You don't have enough balance!";
+                        header("refresh:2");
 					}
 
 			}else{
@@ -145,7 +145,7 @@ include 'includes/dbconnect.php';
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                
+
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -194,7 +194,7 @@ include 'includes/dbconnect.php';
         </div>
 
         <!-- ========== Web Icons ========== -->
-        
+
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
 
         <div class="col-12 mb-70">
@@ -225,7 +225,7 @@ include 'includes/dbconnect.php';
                                 <h2>Transfer amount</h2>
                             </div>
                             <form class="form-horizontal" action="Fundtransfer.php" method="post" role="form">
-                                
+
                                 <div class="form-group">
                                     <label for="number" class="col-sm-6 control-label"><b>Enter Payee Account Number
                                             *</label>
@@ -250,7 +250,7 @@ include 'includes/dbconnect.php';
                                 </div>
 
 
-                              
+
                     </article>
                     </form>
     </section>
@@ -318,7 +318,7 @@ include 'includes/dbconnect.php';
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget mb-100">
                         <h5 class="widget-title">Solutions</h5>
-                        
+
                         <nav>
                             <ul>
                                 <li><a href="#">Our Loans</a></li>

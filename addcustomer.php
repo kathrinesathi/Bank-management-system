@@ -5,7 +5,7 @@ include 'includes/dbconnect.php';
 	$success = "";
 
 	if(isset($_POST['submit'])){
-
+        $customerid = $_POST['customerid'];
         $iban = $_POST['iban'];
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
@@ -30,11 +30,10 @@ include 'includes/dbconnect.php';
 		// $run_sql = mysqli_query($con,$ins_sql);
         // $success = "Account added successfully!";
 
-		$temp = mysqli_affected_rows($con);
-		if($temp>0){
+		// $temp = mysqli_affected_rows($con);
+		if(isset($_POST['submit'])){
 
-            $ins_sql = "INSERT INTO customers (iban, firstname, lastname, emailid, password, transpassword, accstatus,city, state, country, accopendate) VALUES 
-            ('".$iban."', '".$fname."', '".	$lname."', '".$emailid."', '".$password."', '".$pin."', '".$accstatus."', '".$city."', '".$state."', '".$country."' )";
+            $ins_sql = "INSERT INTO customers (customerid, iban, firstname, lastname, emailid, password, transpassword, accstatus, city, state, country, accopendate) VALUES ('".$customerid."', '".$iban."', '".$fname."', '".	$lname."', '".$emailid."', '".$password."', '".$pin."', '".$accstatus."', '".$city."', '".$state."', '".$country."', '".$accdate."' )";
             
             $run_sql = mysqli_query($con,$ins_sql);
 			$success = "Account added successfully!";
@@ -181,123 +180,130 @@ include 'includes/dbconnect.php';
 
 
 
-       <!-- Single Icons -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="single-icons mb-30">
-                   <i class="fa fa-user"></i>
-                     <a href=#><span>Add Customer</span></a>
+                <!-- Single Icons -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="single-icons mb-30">
+                        <i class="fa fa-user"></i>
+                        <a href=#><span>Add Customer</span></a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="single-icons mb-30">
-                    <i class="icon-diamond"></i>
-                    <a href="admin.php"> <span>Dash Board</span></a>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="single-icons mb-30">
+                        <i class="icon-diamond"></i>
+                        <a href="admin.php"> <span>Dash Board</span></a>
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="container">
-                 <div class="container">
-                    <article class="row">
-                        <section class="col-sm-8">
-                            <div class="page-header">
-                                <h2>Please fill !!!</h2>
-                            </div>
-                             <form class="form-horizontal" action="addcustomer.php" method="post" role="form">
-                                <b>
-                                    <div class="form-group">
-                                        <label for="number" class="col-sm-3 control-label">IBAN number :</label>
+                <div class="container">
+                    <div class="container">
+                        <article class="row">
+                            <section class="col-sm-8">
+                                <div class="page-header">
+                                    <h2>Please fill !!!</h2>
+                                </div>
+                                <form class="form-horizontal" action="addcustomer.php" method="post" role="form">
+                                    <b>
+                                        <div class="form-group">
+                                            <label for="number" class="col-sm-3 control-label">Customer ID :</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="customerid" class="form-control"
+                                                    placeholder="Enter Customer id" id="customerid" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="number" class="col-sm-3 control-label">IBAN number :</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="iban" class="form-control"
                                                     placeholder="Enter iban number" id="iban" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="number" class="col-sm-3 control-label">First Name :</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="number" class="col-sm-3 control-label">First Name :</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="fname" class="form-control"
                                                     placeholder="Enter customer's first name" id="fname" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="number" class="col-sm-3 control-label">Last Name :</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="number" class="col-sm-3 control-label">Last Name :</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="lname" class="form-control"
                                                     placeholder="Enter customer's last name" id="lname" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">Email-Id :</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">Email-Id :</label>
                                             <div class="col-sm-8">
                                                 <input type="email" name="emailid" class="form-control"
                                                     placeholder="Enter customer's last name" id="emailid" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">Password :</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">Password :</label>
                                             <div class="col-sm-8">
                                                 <input type="password" name="password" class="form-control"
                                                     placeholder="Enter the password" id="password" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">Pin :</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">Pin :</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="pin" class="form-control"
                                                     placeholder="Enter the pin" id="pin" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">Account Status:</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">Account Status:</label>
                                             <div class="col-sm-8">
-                                            <select class="form-control" name="accstatus" id="accstatus">
+                                                <select class="form-control" name="accstatus" id="accstatus">
                                                     <option>Savings</option>
                                                     <option>Current</option>
                                                 </select>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">City:</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">City:</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="city" class="form-control"
                                                     placeholder="Enter city" id="city" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">State:</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">State:</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="state" class="form-control"
                                                     placeholder="Enter state" id="state" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                         <label for="text" class="col-sm-3 control-label">Country:</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">Country:</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="country" class="form-control"
                                                     placeholder="Enter state" id="country" required>
                                             </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-8">
-                                            <input type="submit" id="submit" name="submit" value="Submit"
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-8">
+                                                <input type="submit" id="submit" name="submit" value="Submit"
                                                     class="btn btn-primary mt-50 ">
-                                            <input type="reset" id="reset" name="submit" value="Reset"
+                                                <input type="reset" id="reset" name="submit" value="Reset"
                                                     class="btn btn-danger mt-50">
-                                       </div>
-                                    </div>  
-                                </b>
-                            </form>      
-                       </article> 
-                    </section>                
-                </div>
-             </div>
+                                            </div>
+                                        </div>
+                                    </b>
+                                </form>
+                        </article>
+    </section>
+    </div>
+    </div>
 
-             <div class="form-group">
-                <label class="col-sm-3 control-label"></label>
-                    <div class="col-sm-8">
-                        <h4><?php echo $success ?></h4>
-                    </div>
-            </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"></label>
+        <div class="col-sm-8">
+            <h4><?php echo $success ?></h4>
+        </div>
+    </div>
 
 
     <!-- ##### Elements Area End ##### -->

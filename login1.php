@@ -18,12 +18,12 @@ if (isset($_POST['login'])) {
 		$_SESSION['usr_id'] = $row['customerid'];
 		$_SESSION['usr_name'] = $row['firstname'];
 
-		if(count($_SESSION['usr_id'])==1){
+		// if(count($_SESSION['usr_id'])==1){
 
 			header("Location: customer.php");
             
 		}
-	} else {
+	 else {
 		$errormsg = "Incorrect Email or Password!!!";
         header("refresh:2");
 	}

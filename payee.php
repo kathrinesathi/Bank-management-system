@@ -33,9 +33,11 @@ include 'includes/dbconnect.php';
 				$run_sql = mysqli_query($con,$ins_sql);
 
 				$success = "Payee registered successfully!";
+                // header("refresh:4");
 			}else{
 
 				$success = "The payee account doesn't exist!";
+                // header("refresh:4");
 			}
 		}
 ?>

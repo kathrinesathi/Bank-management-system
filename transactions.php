@@ -83,19 +83,7 @@ $id = addslashes($_SESSION['usr_id']);
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <!-- <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">Services</a>
-                                        <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul>
-                                        </li>
-                                    <li><a href="post.html">Blog</a></li> -->
-                                    <!-- <li><a href="contact.html">Contact</a></li> -->
-                                    <!-- <li><a href="login.html">Login</a></li> -->
+
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -141,8 +129,7 @@ $id = addslashes($_SESSION['usr_id']);
         <!-- ========== Web Icons ========== -->
         <div class="col-12">
             <div class="elements-title mb-30">
-                <!-- <div class="line"></div>
-                <h2>User DashBoard</h2> -->
+
             </div>
         </div>
         <h3>User <?php echo $_SESSION['usr_name']; ?></h3>
@@ -178,7 +165,7 @@ $id = addslashes($_SESSION['usr_id']);
                                 <thead>
                                     <!-- <th>Transaction ID</th> -->
                                     <th>Payment Date</th>
-                                    <th>Sender ID</th>
+                                    <!-- <th>Sender ID</th> -->
                                     <th>Receiver ID</th>
                                     <th>Amount</th>
                                     <!-- <th>Status</th> -->
@@ -201,7 +188,7 @@ $id = addslashes($_SESSION['usr_id']);
 					      <tr>
 					        
                             <td>'.$rows['paymentdate'].'</td>
-                            <td>'.$rows['payeeid'].'</td>
+                            
                             <td>'.$rows['receiveid'].'</td>
                             <td>'.$rows['amount'].'</td>
                             
@@ -214,11 +201,7 @@ $id = addslashes($_SESSION['usr_id']);
     ?>
 
                             </table>
-                            <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
-                                <i class="icon-purse"></i>
-                                <a href="customer.php"> <span>Dash Board</span></a>
-                            </div> -->
 
                         </section>
                     </article>
@@ -278,7 +261,7 @@ $id = addslashes($_SESSION['usr_id']);
                 </div>
 
                 <!-- Single Footer Widget -->
-                <!-- <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget mb-100">
                         <h5 class="widget-title">Solutions</h5>
                         
@@ -292,7 +275,7 @@ $id = addslashes($_SESSION['usr_id']);
                             </ul>
                         </nav>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- Single Footer Widget -->
                 <div class="col-12 col-sm-6 col-lg-3">
@@ -363,12 +346,10 @@ $id = addslashes($_SESSION['usr_id']);
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="#">
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;<script>
                                     document.write(new Date().getFullYear());
                                     </script> All rights reserved
                                 </a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
                     </div>

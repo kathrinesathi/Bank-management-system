@@ -29,9 +29,15 @@ include 'includes/dbconnect.php';
 						$ins_sql = "UPDATE accounts
 								SET accountbalance = $total
 								WHERE accno = '$accno'";
-
+					    
 						$run_sql = mysqli_query($con, $ins_sql);
-				
+
+                        // $date = date('y-m-d');
+						
+                        // $sql5 = "INSERT INTO transactions (payeeid, paymentdate,  receiveid, amount ) VALUES ('".$accno."','".$date."', '".$accno."','".$amount."')";
+				        
+						// $run1_sql = mysqli_query($con, $sql5);
+
 						$success = "Money withdrawn successfully!";
 					}else{
 

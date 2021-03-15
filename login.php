@@ -18,16 +18,16 @@ if (isset($_POST['login'])) {
 		$_SESSION['usr_id'] = $row['empid'];
 		$_SESSION['usr_name'] = $row['empname'];
 
-		if(count($_SESSION['usr_id'])==1){
+		// if(count($_SESSION['usr_id'])==1){
 
             
 			header("Location: admin.php");
 		 }
-	} else {
+	else {
 		$errormsg = "Incorrect Email or Password!!!";
         header("refresh:2");
 	}
-}
+} 
 ?>
 
 
@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+  -
     <!-- Title -->
     <title>BB Bank.com - BB Company </title>
 

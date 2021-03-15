@@ -177,10 +177,7 @@ $id = addslashes($_SESSION['usr_id']);
 				        <td>Status</td>
 				        <td>'.$rows['accstatus'].'</td>
 				      </tr>
-				      <tr>
-				        <td>Account type</td>
-				        <td>'.$rows['accounttype'].'</td>
-				      </tr>
+				   
 				      <tr>
 				        <td>Account balance</td>
 				        <td>'.$rows['accountbalance'].'</td>

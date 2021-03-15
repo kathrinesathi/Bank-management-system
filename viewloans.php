@@ -13,7 +13,7 @@ include_once 'includes/dbconnect.php';
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>BB Bank.com - BB Company</title>
+    <title>CITY BANK</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -51,8 +51,8 @@ include_once 'includes/dbconnect.php';
                             <a href="#" data-toggle="tooltip" data-placement="bottom"
                                 title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png"
                                     alt=""> <span>10 th street Avenue, chennai, IND</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@bb.com"><img
-                                    src="img/core-img/message.png" alt=""> <span>info@bb.com</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@CityBank.com"><img
+                                    src="img/core-img/message.png" alt=""> <span>info@CityBank.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ include_once 'includes/dbconnect.php';
                 <!-- Single Icons -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="single-icons mb-30">
-                        <i class="icon-diamond"></i>
+                        <i class="icon-calculator"></i>
                         <a href="viewloans.php"><span>View Loans</span></a>
 
                     </div>

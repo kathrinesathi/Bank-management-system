@@ -14,7 +14,7 @@ include 'includes/dbconnect.php';
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>BB Bank.com - BB Company </title>
+    <title>CITY BANK </title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -49,8 +49,11 @@ include 'includes/dbconnect.php';
 
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png" alt=""> <span>10 th street Avenue, chennai, IND</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@bb.com"><img src="img/core-img/message.png" alt=""> <span>info@bb.com</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom"
+                                title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png"
+                                    alt=""> <span>10 th street Avenue, chennai, IND</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@CityBank.com"><img
+                                    src="img/core-img/message.png" alt=""> <span>info@CityBank.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -68,10 +71,10 @@ include 'includes/dbconnect.php';
                         </div>
                         <!-- Contact -->
                         <div class="contact">
-                        
+
                             <?php if (isset($_SESSION['usr_id']))  ?>
-				            <a href="logout.php">Log Out</a>
-				            
+                            <a href="logout.php">Log Out</a>
+
                         </div>
                     </nav>
                 </div>
@@ -80,14 +83,14 @@ include 'includes/dbconnect.php';
 
     </header>
     <!-- ##### Header Area End ##### -->
-                <!-- ========== Web Icons ========== -->
-                <!-- <div class="col-12">
+    <!-- ========== Web Icons ========== -->
+    <!-- <div class="col-12">
                     <div class="elements-title mb-30">
                           <section class="elements-area section-padding-80-0">
                         <h2>User DashBoard</h2>
                     </div>
                 </div> -->
-                  <!-- ##### Breadcrumb Area Start ##### -->
+    <!-- ##### Breadcrumb Area Start ##### -->
     <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/13.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -100,140 +103,141 @@ include 'includes/dbconnect.php';
         </div>
     </section>
     <!-- ##### Breadcrumb Area End ##### -->
-                <div class="col-12 mt-30 mb-30">
-                      <h3>Welcome, <?php echo $_SESSION['usr_name']; ?></h3>
+    <div class="col-12 mt-30 mb-30">
+        <h3>Welcome, <?php echo $_SESSION['usr_name']; ?></h3>
+    </div>
+    <div class="col-12 mb-70">
+        <div class="row">
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-purse"></i>
+                    <a href="accountdetails.php"> <span>Account Details</span></a>
                 </div>
-                <div class="col-12 mb-70">
-                    <div class="row">                        
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-purse"></i>
-                             <a href="accountdetails.php"> <span>Account Details</span></a>  
-                            </div>
-                        </div>
-                       
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-smartphone-1"></i>
-                                <a href="Fundtransfer.php"><span>Fund Transfer</span></a> 
-                                
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-check"></i>
-                                <a href="transactions.php"><span>Transactions</span></a> 
-                               
-                            </div>
-                        </div>
-                         <!-- Single Icons -->
-                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-credit-card-1"></i>
-                                <a href="loaninfo.php"><span>Fastag</span></a> 
-                                
-                            </div>
-                        </div>                        
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                           
-                             <i class="icon-invoice"></i>
-                             <a href="payee.php"><span>Register Payee</span></a> 
-                            
-                            </div>
-                        </div>   
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-smartphone"></i>
-                                <a href="removepayee.php"><span>Remove Payee</span></a> 
-                        
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-calculator"></i>
-                                <a href="loanpayment.php"><span>Pay Loan</span></a> 
-                                
-                            </div>
-                        </div>
-                        <!-- Single Icons -->
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div class="single-icons mb-30">
-                                <i class="icon-atm-machine-1"></i>
-                                <a href="loanhistory.php"><span>Loan History</span></a> 
-                                
-                            </div>
-                        </div>
-                       
-                        
-                    </div>
-                </div>
-                
             </div>
+
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-smartphone-1"></i>
+                    <a href="Fundtransfer.php"><span>Fund Transfer</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-check"></i>
+                    <a href="transactions.php"><span>Transactions</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-credit-card-1"></i>
+                    <a href="loaninfo.php"><span>Fastag</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+
+                    <i class="icon-invoice"></i>
+                    <a href="payee.php"><span>Register Payee</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-smartphone"></i>
+                    <a href="removepayee.php"><span>Remove Payee</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-atm-machine-1"></i>
+                    <a href="loanhistory.php"><span>Loan History</span></a>
+
+                </div>
+            </div>
+            <!-- Single Icons -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="single-icons mb-30">
+                    <i class="icon-calculator"></i>
+                    <a href="loanpayment.php"><span>Pay Loan</span></a>
+
+                </div>
+            </div>
+
+
+
         </div>
-        <div class="container">
+    </div>
+
+    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <!-- ========== Icon Boxes ========== -->
+            <div class="col-12">
+                <div class="elements-title mb-30">
+
+                    <h2>Benefits</h2>
+                </div>
+            </div>
+
+            <div class="col-12">
                 <div class="row">
-                    
-                    <!-- ========== Icon Boxes ========== -->
-                    <div class="col-12">
-                        <div class="elements-title mb-30">
-                            
-                            <h2>Benefits</h2>
-                        </div>
-                    </div>
-    
-                    <div class="col-12">
-                        <div class="row">
-                            <!-- Single Service Area -->
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="single-service-area d-flex mb-100">
-                                    <div class="icon">
-                                        <i class="icon-profits"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h5>All the loans</h5>
-                                        <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                                    </div>
-                                </div>
+                    <!-- Single Service Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-service-area d-flex mb-100">
+                            <div class="icon">
+                                <i class="icon-profits"></i>
                             </div>
-    
-                            <!-- Single Service Area -->
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="single-service-area d-flex mb-100">
-                                    <div class="icon">
-                                        <i class="icon-money-1"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h5>Easy and fast answer</h5>
-                                        <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <!-- Single Service Area -->
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="single-service-area d-flex mb-100">
-                                    <div class="icon">
-                                        <i class="icon-coin"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h5>No additional papers</h5>
-                                        <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                                    </div>
-                                </div>
+                            <div class="text">
+                                <h5>All the loans</h5>
+                                <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
                             </div>
                         </div>
                     </div>
-    </section>
-    <!-- ##### Elements Area End ##### -->
-   </div>
-   </div>
+
+                    <!-- Single Service Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-service-area d-flex mb-100">
+                            <div class="icon">
+                                <i class="icon-money-1"></i>
+                            </div>
+                            <div class="text">
+                                <h5>Easy and fast answer</h5>
+                                <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Service Area -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-service-area d-flex mb-100">
+                            <div class="icon">
+                                <i class="icon-coin"></i>
+                            </div>
+                            <div class="text">
+                                <h5>No additional papers</h5>
+                                <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <!-- ##### Elements Area End ##### -->
+        </div>
+    </div>
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area section-padding-100-0">
         <div class="container">
@@ -284,8 +288,10 @@ include 'includes/dbconnect.php';
                             <div class="news-content">
                                 <a href="#">How to get the best loan?</a>
                                 <div class="news-meta">
-                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane Smith</a>
-                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April 26</a>
+                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane
+                                        Smith</a>
+                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April
+                                        26</a>
                                 </div>
                             </div>
                         </div>
@@ -298,8 +304,10 @@ include 'includes/dbconnect.php';
                             <div class="news-content">
                                 <a href="#">A new way to get a loan</a>
                                 <div class="news-meta">
-                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane Smith</a>
-                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April 26</a>
+                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane
+                                        Smith</a>
+                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April
+                                        26</a>
                                 </div>
                             </div>
                         </div>
@@ -312,8 +320,10 @@ include 'includes/dbconnect.php';
                             <div class="news-content">
                                 <a href="#">Finance you home</a>
                                 <div class="news-meta">
-                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane Smith</a>
-                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April 26</a>
+                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane
+                                        Smith</a>
+                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April
+                                        26</a>
                                 </div>
                             </div>
                         </div>
@@ -334,8 +344,10 @@ include 'includes/dbconnect.php';
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="#">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-</p>
+                                    Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                    </script> All rights reserved </a>
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -44,8 +44,11 @@
 
                         <!-- Top Contact Info -->
                         <div class="top-contact-info d-flex align-items-center">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png" alt=""> <span>10 th street Avenue, chennai, IND</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@CityBank.com"><img src="img/core-img/message.png" alt=""> <span>info@CityBank.com</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom"
+                                title="10 th street Avenue, chennai, IND"><img src="img/core-img/placeholder.png"
+                                    alt=""> <span>10 th street Avenue, chennai, IND</span></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="info@CityBank.com"><img
+                                    src="img/core-img/message.png" alt=""> <span>info@CityBank.com</span></a>
                         </div>
                     </div>
                 </div>
@@ -77,20 +80,9 @@
                                 <ul>
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="post.html">Blog</a></li>
-                                    <li><a href="services.html">Services</a> </li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
-                                        <!-- <div class="dropdown">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="#">Portfolio 1</a></li>
-                                                <li><a href="#">Portfolio 2</a></li>
-                                                <li><a href="#">Portfolio 3</a></li>
-                                            </ul> -->
-                                       
-                                    
-                                    
-                                    <!-- <li><a href="login.php">Login</a></li> -->
-                                    <!-- <li><a href="user_account.html">Dashboard</a></li> -->
+                                    <li><a href="services.html">Services</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -98,7 +90,7 @@
 
                         <!-- Contact -->
                         <div class="contact">
-                            <a href="#"><img src="img/core-img/call2.png" alt=""> +91-855-5286-511</a>
+                            <a href="#"><img src="img/core-img/call2.png" alt=""> +91-636-9510-580</a>
                         </div>
                     </nav>
                 </div>
@@ -122,15 +114,17 @@
                             <div class="welcome-text text-center">
                                 <h2 data-animation="fadeInUp" data-delay="300ms"><span>BANKING</span> PARTNER</h2>
                                 <!-- <p data-animation="fadeInUp" data-delay="500ms">Vestibulum eu vehicula elit, nec elementum orci. Praesent aliquet ves tibulum tempus. Pellentesque posuere pharetra turpis, eget finibus erat porta placerat.</p> -->
-                                <a href="login.php" class="btn credit-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Login as Admin</a>
-                                <a href="login1.php" class="btn credit-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Login as Customer</a>
+                                <a href="login.php" class="btn credit-btn mt-50" data-animation="fadeInUp"
+                                    data-delay="700ms">Login as Admin</a>
+                                <a href="login1.php" class="btn credit-btn mt-50" data-animation="fadeInUp"
+                                    data-delay="700ms">Login as Customer</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Slide Duration Indicator -->
                 <div class="slide-du-indicator"></div>
-            </div>    
+            </div>
 
         </div>
     </div>
@@ -175,7 +169,7 @@
     </section>
     <!-- ##### Features Area End ###### -->
 
-    
+
     <!-- ##### Call To Action Start ###### -->
     <section class="cta-2-area wow fadeInUp" data-wow-delay="100ms">
         <div class="container">
@@ -197,6 +191,8 @@
     <!-- ##### Call To Action End ###### -->
 
     <!-- ##### Services Area Start ###### -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
     <section class="services-area section-padding-100-0">
         <div class="container">
             <div class="row">
@@ -207,93 +203,142 @@
                         <p>Take look at our</p>
                         <h2>Our services</h2>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="icon">
-                            <i class="icon-profits"></i>
-                        </div>
-                        <div class="text">
-                            <h5>All the loans</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="icon">
-                            <i class="icon-money-1"></i>
+                    <div class="row">
+                        <!-- Single Service Area -->
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-stats mb-4 mb-xl-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
+                                            <span class="h2 font-weight-bold mb-0">350,897</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                                        <span class="text-nowrap">Since last month</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <h5>Easy and fast answer</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-stats mb-4 mb-xl-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
+                                            <span class="h2 font-weight-bold mb-0">2,356</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                                <i class="fas fa-chart-pie"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                                        <span class="text-nowrap">Since last week</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-stats mb-4 mb-xl-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                                            <span class="h2 font-weight-bold mb-0">924</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                                        <span class="text-nowrap">Since yesterday</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card card-stats mb-4 mb-xl-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                                            <span class="h2 font-weight-bold mb-0">49,65%</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                                <i class="fas fa-percent"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                                        <span class="text-nowrap">Since last month</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="icon">
-                            <i class="icon-coin"></i>
-                        </div>
-                        <div class="text">
-                            <h5>No additional papers</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Service Area -->
+                        <!-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="500ms">
                         <div class="icon">
                             <i class="icon-smartphone-1"></i>
                         </div>
                         <div class="text">
                             <h5>Secure financial services</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
+                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Service Area -->
+                        <!-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="600ms">
                         <div class="icon">
                             <i class="icon-diamond"></i>
                         </div>
                         <div class="text">
                             <h5>Good investments</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
+                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Single Service Area -->
-                <div class="col-12 col-md-6 col-lg-4">
+                        <!-- Single Service Area -->
+                        <!-- <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="700ms">
                         <div class="icon">
                             <i class="icon-piggy-bank"></i>
                         </div>
                         <div class="text">
                             <h5>Accumulation goals</h5>
-                            <!-- <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p> -->
+                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p>
                         </div>
                     </div>
+                </div> -->
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- ##### Services Area End ###### -->
-<!-- ##### Newsletter Area Start ###### -->
-    <section class="newsletter-area section-padding-100 bg-img jarallax" style="background-image: url(img/bg-img/6.jpg);">
+    <!-- ##### Newsletter Area Start ###### -->
+    <section class="newsletter-area section-padding-100 bg-img jarallax"
+        style="background-image: url(img/bg-img/6.jpg);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-10 col-lg-8">
@@ -326,7 +371,7 @@
                                 <li><a href="index.php">Homepage</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services &amp; Offers</a></li>
-                                <!-- <li><a href="#">Portfolio Presentation</a></li> -->
+                                <li><a href="#">Portfolio Presentation</a></li>
                                 <li><a href="post.html">The News</a></li>
                             </ul>
                         </nav>
@@ -343,13 +388,28 @@
                                 <li><a href="login1.php">Our Loans</a></li>
                                 <li><a href="login1.php">Trading &amp; Commerce</a></li>
                                 <li><a href="login1.php">Banking &amp; Private Equity</a></li>
-                                <!-- <li><a href="login1.php">Industrial &amp; Factory</a></li> -->
+                                <li><a href="login1.php">Industrial &amp; Factory</a></li>
                                 <li><a href="login1.php">Financial Solutions</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
-
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5 class="widget-title">Our services</h5>
+                        <!-- Nav -->
+                        <nav>
+                            <ul>
+                                <li><a href="#">Loan</a></li>
+                                <li><a href="#">Easy & fast answer</a></li>
+                                <li><a href="#">No additional paper</a></li>
+                                <li><a href="#">Financial services</a></li>
+                                <li><a href="#">Good investments</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
                 <!-- Single Footer Widget -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget mb-100">
@@ -363,8 +423,10 @@
                             <div class="news-content">
                                 <a href="#">How to get the best loan?</a>
                                 <div class="news-meta">
-                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane Smith</a>
-                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April 26</a>
+                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt="">
+                                        Bennet</a>
+                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> March
+                                        26</a>
                                 </div>
                             </div>
                         </div>
@@ -377,8 +439,10 @@
                             <div class="news-content">
                                 <a href="#">A new way to get a loan</a>
                                 <div class="news-meta">
-                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane Smith</a>
-                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April 26</a>
+                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt="">
+                                        Bennet</a>
+                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> March
+                                        26</a>
                                 </div>
                             </div>
                         </div>
@@ -391,8 +455,10 @@
                             <div class="news-content">
                                 <a href="#">Finance you home</a>
                                 <div class="news-meta">
-                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt=""> Jane Smith</a>
-                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> April 26</a>
+                                    <a href="#" class="post-author"><img src="img/core-img/pencil.png" alt="">
+                                        Bennet</a>
+                                    <a href="#" class="post-date"><img src="img/core-img/calendar.png" alt=""> March
+                                        26</a>
                                 </div>
                             </div>
                         </div>
@@ -412,9 +478,14 @@
                             <a href="index.php" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
 
                             <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <p class="copywrite-text"><a href="#">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                    </script> All rights reserved
+                                </a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -193,21 +193,21 @@
     <!-- ##### Services Area Start ###### -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
-    <section class="services-area section-padding-100-0">
+    <section class="services-area section-padding-100-0 mb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <!-- Section Heading -->
-                    <div class="section-heading text-center mb-100 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="section-heading text-center mb-70 wow fadeInUp" data-wow-delay="100ms">
                         <div class="line"></div>
                         <p>Take look at our</p>
-                        <h2>Our services</h2>
+                        <h2>Our Statics</h2>
                     </div>
 
 
                     <div class="row">
                         <!-- Single Service Area -->
-                        <div class="col-xl-3 col-lg-6">
+                        <div class="col-xl-3 col-lg-6 wow fadeInUp"  data-wow-delay="100ms">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
@@ -228,7 +228,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6">
+                        <div class="col-xl-3 col-lg-6 wow fadeInUp"  data-wow-delay="100ms">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
@@ -249,7 +249,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6">
+                        <div class="col-xl-3 col-lg-6 wow fadeInUp"  data-wow-delay="100ms">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
@@ -270,7 +270,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-6">
+                        <div class="col-xl-3 col-lg-6 wow fadeInUp"  data-wow-delay="100ms">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                     <div class="row">
@@ -292,48 +292,10 @@
                             </div>
                         </div>
 
-                        <!-- Single Service Area -->
-                        <!-- <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="icon">
-                            <i class="icon-smartphone-1"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Secure financial services</h5>
-                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p>
-                        </div>
                     </div>
-                </div> -->
-
-                        <!-- Single Service Area -->
-                        <!-- <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="icon">
-                            <i class="icon-diamond"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Good investments</h5>
-                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p>
-                        </div>
-                    </div>
-                </div> -->
-
-                        <!-- Single Service Area -->
-                        <!-- <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-service-area d-flex mb-100 wow fadeInUp" data-wow-delay="700ms">
-                        <div class="icon">
-                            <i class="icon-piggy-bank"></i>
-                        </div>
-                        <div class="text">
-                            <h5>Accumulation goals</h5>
-                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem.</p>
-                        </div>
-                    </div>
-                </div> -->
-                    </div>
-                </div>
                 </div>
             </div>
+        </div>
     </section>
     <!-- ##### Services Area End ###### -->
     <!-- ##### Newsletter Area Start ###### -->

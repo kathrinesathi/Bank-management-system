@@ -12,7 +12,7 @@ include 'includes/dbconnect.php';
 			$in_sql = "SELECT * FROM accounts WHERE accno = '$accno'";
 			$ru_sql = mysqli_query($con, $in_sql);
 			$temp = mysqli_affected_rows($con);
-			if($temp<0){
+			if($temp>0){
 
 				$success = "Loan granted successfully!";
                 header("refresh:2");
@@ -43,8 +43,8 @@ include 'includes/dbconnect.php';
 
 				$linterest = $_POST['linterest'];
 				$ldate = date('y:m:d');
-				$ins_sql = "INSERT INTO loan (loantype, loanamount, customerid, interest, startdate) VALUES 
-                ('".$ltype."', '".$lamount."', '".$custid."', '".$linterest."', '".$ldate."')";
+				$ins_sql = "INSERT INTO loan (accno, loantype, loanamount, customerid, interest, startdate) VALUES 
+                ('".$accno."', '".$ltype."', '".$lamount."', '".$custid."', '".$linterest."', '".$ldate."')";
 				$run_sql = mysqli_query($con,$ins_sql);
                 
 

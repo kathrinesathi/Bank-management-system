@@ -28,7 +28,7 @@ include 'includes/dbconnect.php';
 				$acctype = $_POST['acctype'];
 				$accifsc = $_POST['iban'];
 
-				$ins_sql = "INSERT INTO registered_payee(payeename,accno, accounttype, iban) VALUES ('".$accname."', '".$accno."', '".$acctype."', '".$accifsc."')";
+				$ins_sql = "INSERT INTO registered_payee(owner_no, payeename, accno, accounttype, iban) VALUES ('".$owner_no."', '".$accname."', '".$accno."', '".$acctype."', '".$accifsc."')";
 
 				$run_sql = mysqli_query($con,$ins_sql);
 

@@ -41,7 +41,7 @@ include 'includes/dbconnect.php';
 
 					$total = $owner_balance - $amount;
 
-					$sql2 = "UPDATE accounts SET accbalance = $total WHERE accno = '$accno'";
+					$sql2 = "UPDATE accounts SET accountbalance = $total WHERE accno = '$accno'";
 
 					$run2 = mysqli_query($con, $sql2);
 

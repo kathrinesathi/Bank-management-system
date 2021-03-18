@@ -16,6 +16,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="statics.css">
+
 
 </head>
 

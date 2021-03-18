@@ -213,7 +213,7 @@ include 'includes/dbconnect.php';
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="single-icons mb-30">
                         <i class="icon-smartphone-1"></i>
-                        <a href="grantloan.php"><span>Grant Loan</span></a>
+                        <a href=#><span>Grant Loan</span></a>
 
                     </div>
                 </div>

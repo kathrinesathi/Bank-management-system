@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2021 at 02:45 PM
+-- Generation Time: Mar 19, 2021 at 10:34 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -54,7 +54,7 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accno`, `customerid`, `accstatus`, `accopendate`, `accountbalance`) VALUES
-('18106213', 1, 'Savings', '2021-03-15', '1100000.00'),
+('18106213', 1, 'Savings', '2021-03-15', '1000000.00'),
 ('18106214', 2, 'Savings', '2021-03-15', '500000.00'),
 ('18106215', 3, 'Savings', '2021-03-15', '7100000.00'),
 ('18106261', 4, 'Savings', '2021-03-15', '1850700.00');
@@ -140,6 +140,32 @@ INSERT INTO `employees` (`empid`, `empname`, `password`, `emailid`, `contactno`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fastag`
+--
+
+CREATE TABLE `fastag` (
+  `fastagid` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `accno` int(25) NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+  `dob` date NOT NULL,
+  `phonenum` varchar(100) NOT NULL,
+  `vehiclenum` varchar(25) NOT NULL,
+  `accopendate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fastag`
+--
+
+INSERT INTO `fastag` (`fastagid`, `firstname`, `lastname`, `accno`, `emailid`, `dob`, `phonenum`, `vehiclenum`, `accopendate`) VALUES
+(1, 'hari', 'prasaad', 2021001, 'hari@gmail.com', '2001-01-10', '7092434502', 'TN50H5412', '2021-03-19'),
+(2, 'kathrine', 'sathi', 2021002, 'kathrine@gmail.com', '2001-06-02', '8110894502', 'TN12K2875', '2021-03-19');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `loan`
 --
 
@@ -158,10 +184,10 @@ CREATE TABLE `loan` (
 --
 
 INSERT INTO `loan` (`loanid`, `accno`, `loantype`, `loanamount`, `customerid`, `interest`, `startdate`) VALUES
-(1, '18106213', 'car loan', 500000.00, 1, 1234.00, '2021-03-01'),
+(1, '18106213', 'car loan', 300000.00, 1, 1234.00, '2021-03-01'),
 (2, '18106214', 'Education loan', 300000.00, 2, 1000.00, '2021-03-01'),
 (3, '18106215', 'house loan', 700000.00, 3, 2312.00, '2021-03-18'),
-(4, '18106213', 'personal loan', 600000.00, 1, 2084.00, '2021-03-18');
+(4, '18106213', 'personal loan', 500000.00, 1, 2084.00, '2021-03-18');
 
 -- --------------------------------------------------------
 
@@ -175,6 +201,16 @@ CREATE TABLE `loanpayment` (
   `from_acc` int(20) NOT NULL,
   `payment_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `loanpayment`
+--
+
+INSERT INTO `loanpayment` (`loantype`, `amount`, `from_acc`, `payment_date`) VALUES
+('personal loan', 50000, 18106213, '2021-03-18'),
+('personal loan', 50000, 18106213, '2021-03-18'),
+('car loan', 100000, 18106213, '2021-03-18'),
+('car loan', 100000, 18106213, '2021-03-18');
 
 -- --------------------------------------------------------
 
@@ -205,6 +241,7 @@ INSERT INTO `loantype` (`loantype`, `prefix`, `maximumamount`, `minimumamount`, 
 --
 
 CREATE TABLE `registered_payee` (
+  `owner_no` varchar(25) NOT NULL,
   `payeename` varchar(25) NOT NULL,
   `accno` varchar(25) NOT NULL,
   `accounttype` varchar(25) NOT NULL,
@@ -215,8 +252,8 @@ CREATE TABLE `registered_payee` (
 -- Dumping data for table `registered_payee`
 --
 
-INSERT INTO `registered_payee` (`payeename`, `accno`, `accounttype`, `iban`) VALUES
-('rohit', '18106261', 'Savings', 'KH12345');
+INSERT INTO `registered_payee` (`owner_no`, `payeename`, `accno`, `accounttype`, `iban`) VALUES
+('18106213', 'rohit', '18106261', 'Current', 'KH12345');
 
 -- --------------------------------------------------------
 
@@ -287,17 +324,17 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`empid`);
 
 --
+-- Indexes for table `fastag`
+--
+ALTER TABLE `fastag`
+  ADD PRIMARY KEY (`fastagid`);
+
+--
 -- Indexes for table `loan`
 --
 ALTER TABLE `loan`
   ADD PRIMARY KEY (`loanid`),
   ADD KEY `fk1_Loan` (`customerid`);
-
---
--- Indexes for table `loanpayment`
---
-ALTER TABLE `loanpayment`
-  ADD PRIMARY KEY (`loantype`(12));
 
 --
 -- Indexes for table `registered_payee`

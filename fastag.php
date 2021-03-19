@@ -14,7 +14,7 @@ include 'includes/dbconnect.php';
     	$dob = $_POST['dob'];
     	$phone = $_POST['phone'];
 		$vnum = $_POST['vnum'];
-		// $city= $_POST['city'];
+		$amount= $_POST['amount'];
 		// $state= $_POST['state'];
 		// $country= $_POST['country'];
 		$accdate = date('y-m-d');
@@ -22,7 +22,7 @@ include 'includes/dbconnect.php';
 
 		if(isset($_POST['submit'])){
 
-            $ins_sql = "INSERT INTO fastag (fastagid, firstname, lastname, accno, emailid, dob, phonenum, vehiclenum, accopendate) VALUES ('".$fastagid."', '".$fname."', '".$lname."','".$accno."', '".$emailid."', '".$dob."', '".$phone."', '".$vnum."', '".$accdate."' )";
+            $ins_sql = "INSERT INTO fastag (fastagid, firstname, lastname, accno, emailid, amount, dob, phonenum, vehiclenum, accopendate) VALUES ('".$fastagid."', '".$fname."', '".$lname."','".$accno."', '".$emailid."', '".$amount."', '".$dob."', '".$phone."', '".$vnum."', '".$accdate."' )";
             
             $run_sql = mysqli_query($con,$ins_sql);
 			$success = "Account added successfully!";
@@ -144,7 +144,7 @@ include 'includes/dbconnect.php';
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Fastag</li>
+                                <li class="breadcrumb-item active" aria-current="page">Apply Fastag</li>
                             </ol>
                         </nav>
                     </div>
@@ -170,7 +170,7 @@ include 'includes/dbconnect.php';
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="single-icons mb-30">
                         <i class="icon-credit-card-1"></i>
-                        <a href=#><span>Apply Fastag</span></a>
+                        <a href=#><span>Fastag</span></a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -247,7 +247,13 @@ include 'includes/dbconnect.php';
                                                     placeholder="Enter Vehicle number" id="vnum" required>
                                             </div>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label for="number" class="col-sm-3 control-label">Amount:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="amount" class="form-control"
+                                                    placeholder="Enter the Amount" id="amount" required>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <div class="col-sm-8">
                                                 <input type="submit" id="submit" name="submit" value="Submit"

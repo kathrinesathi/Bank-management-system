@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 10:34 AM
+-- Generation Time: Mar 19, 2021 at 05:14 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -149,6 +149,7 @@ CREATE TABLE `fastag` (
   `lastname` varchar(50) NOT NULL,
   `accno` int(25) NOT NULL,
   `emailid` varchar(100) NOT NULL,
+  `amount` int(100) NOT NULL,
   `dob` date NOT NULL,
   `phonenum` varchar(100) NOT NULL,
   `vehiclenum` varchar(25) NOT NULL,
@@ -159,9 +160,9 @@ CREATE TABLE `fastag` (
 -- Dumping data for table `fastag`
 --
 
-INSERT INTO `fastag` (`fastagid`, `firstname`, `lastname`, `accno`, `emailid`, `dob`, `phonenum`, `vehiclenum`, `accopendate`) VALUES
-(1, 'hari', 'prasaad', 2021001, 'hari@gmail.com', '2001-01-10', '7092434502', 'TN50H5412', '2021-03-19'),
-(2, 'kathrine', 'sathi', 2021002, 'kathrine@gmail.com', '2001-06-02', '8110894502', 'TN12K2875', '2021-03-19');
+INSERT INTO `fastag` (`fastagid`, `firstname`, `lastname`, `accno`, `emailid`, `amount`, `dob`, `phonenum`, `vehiclenum`, `accopendate`) VALUES
+(1, 'hari', 'prasaad', 2021001, 'hari@gmail.com', 500, '2001-01-10', '7092434502', 'TN50H5412', '2021-03-19'),
+(2, 'kathrine', 'sathi', 2021002, 'kathrine@gmail.com', 500, '2001-02-06', '8110894502', 'TN12K2875', '2021-03-19');
 
 -- --------------------------------------------------------
 

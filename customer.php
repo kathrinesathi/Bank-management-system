@@ -136,7 +136,7 @@ include 'includes/dbconnect.php';
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="single-icons mb-30">
                     <i class="icon-credit-card-1"></i>
-                    <a href="loaninfo.php"><span>Fastag</span></a>
+                    <a href="recharge.php"><span>Fastag</span></a>
 
                 </div>
             </div>

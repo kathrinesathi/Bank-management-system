@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 05:14 PM
+-- Generation Time: Mar 19, 2021 at 08:30 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -54,10 +54,10 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accno`, `customerid`, `accstatus`, `accopendate`, `accountbalance`) VALUES
-('18106213', 1, 'Savings', '2021-03-15', '1000000.00'),
-('18106214', 2, 'Savings', '2021-03-15', '500000.00'),
-('18106215', 3, 'Savings', '2021-03-15', '7100000.00'),
-('18106261', 4, 'Savings', '2021-03-15', '1850700.00');
+('18106213', 1, 'Savings', '2021-03-15', '1500000.00'),
+('18106214', 2, 'Savings', '2021-03-15', '1000000.00'),
+('18106215', 3, 'Savings', '2021-03-15', '700000.00'),
+('18106261', 4, 'Savings', '2021-03-15', '57000.00');
 
 -- --------------------------------------------------------
 
@@ -145,6 +145,7 @@ INSERT INTO `employees` (`empid`, `empname`, `password`, `emailid`, `contactno`,
 
 CREATE TABLE `fastag` (
   `fastagid` int(11) NOT NULL,
+  `customerid` int(11) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `accno` int(25) NOT NULL,
@@ -160,9 +161,9 @@ CREATE TABLE `fastag` (
 -- Dumping data for table `fastag`
 --
 
-INSERT INTO `fastag` (`fastagid`, `firstname`, `lastname`, `accno`, `emailid`, `amount`, `dob`, `phonenum`, `vehiclenum`, `accopendate`) VALUES
-(1, 'hari', 'prasaad', 2021001, 'hari@gmail.com', 500, '2001-01-10', '7092434502', 'TN50H5412', '2021-03-19'),
-(2, 'kathrine', 'sathi', 2021002, 'kathrine@gmail.com', 500, '2001-02-06', '8110894502', 'TN12K2875', '2021-03-19');
+INSERT INTO `fastag` (`fastagid`, `customerid`, `firstname`, `lastname`, `accno`, `emailid`, `amount`, `dob`, `phonenum`, `vehiclenum`, `accopendate`) VALUES
+(1, 1, 'kathrine', 'sathi', 18106213, 'kathrine@gmail.com', 50, '2001-06-02', '8110894502', 'TN12K2875', '2021-03-19'),
+(2, 2, 'hari', 'prasaad', 18106214, 'hari@gmail.com', 150, '2001-01-10', '7092434502', 'TN50H5412', '2021-03-19');
 
 -- --------------------------------------------------------
 

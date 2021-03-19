@@ -6,7 +6,7 @@ include 'includes/dbconnect.php';
 
 	if(isset($_POST['submit'])){
         $fastagid = $_POST['fid'];
-        // $iban = $_POST['iban'];
+        $id = $_POST['id'];
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
         $accno= $_POST['accno'];
@@ -22,7 +22,7 @@ include 'includes/dbconnect.php';
 
 		if(isset($_POST['submit'])){
 
-            $ins_sql = "INSERT INTO fastag (fastagid, firstname, lastname, accno, emailid, amount, dob, phonenum, vehiclenum, accopendate) VALUES ('".$fastagid."', '".$fname."', '".$lname."','".$accno."', '".$emailid."', '".$amount."', '".$dob."', '".$phone."', '".$vnum."', '".$accdate."' )";
+            $ins_sql = "INSERT INTO fastag (fastagid, customerid, firstname, lastname, accno, emailid, amount, dob, phonenum, vehiclenum, accopendate) VALUES ('".$fastagid."', '".$id."', '".$fname."', '".$lname."','".$accno."', '".$emailid."', '".$amount."', '".$dob."', '".$phone."', '".$vnum."', '".$accdate."' )";
             
             $run_sql = mysqli_query($con,$ins_sql);
 			$success = "Account added successfully!";
@@ -195,6 +195,13 @@ include 'includes/dbconnect.php';
                                             <div class="col-sm-8">
                                                 <input type="text" name="fid" class="form-control"
                                                     placeholder="Enter Fastag ID" id="fid" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="number" class="col-sm-3 control-label">Customer ID:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="id" class="form-control"
+                                                    placeholder="Enter Customer ID" id="id" required>
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -1,11 +1,12 @@
 <?php
 session_start();
 include 'includes/dbconnect.php';
-
+$id = addslashes($_SESSION['usr_id']);
 	$success = "";
 
 	if(isset($_POST['submit'])){
         
+		$accno = $_POST['accno'];
 		$vnum = $_POST['vnum'];
 		$amount= $_POST['amount'];
 		$sql1 = "SELECT * FROM fastag WHERE vehiclenum = '$vnum'";
@@ -18,9 +19,23 @@ include 'includes/dbconnect.php';
 
 
 		if($amount>0){
-            $total = $balance + $amount;
 
-            $sql2 = "UPDATE fastag SET amount = $total WHERE vehiclenum = '$vnum'";
+            $in_sql = "SELECT * FROM accounts WHERE accno = '$accno'";
+			$ru_sql = mysqli_query($con, $in_sql);
+            $rows = mysqli_fetch_array($ru_sql);
+            $accountbalance = $rows['accountbalance'];
+            $custacc = $rows['accno'];
+
+            $total = $accountbalance - $amount;
+            $ins_sql = "UPDATE accounts SET accountbalance = $total WHERE accno = '$accno'";
+            $run_sql = mysqli_query($con, $ins_sql);
+
+
+
+
+            $fastagbalance = $balance + $amount;
+
+            $sql2 = "UPDATE fastag SET amount = $fastagbalance WHERE vehiclenum = '$vnum'";
             // $ins_sql = "INSERT INTO fastag (fastagid, firstname, lastname, accno, emailid, amount, dob, phonenum, vehiclenum, accopendate) VALUES ('".$fastagid."', '".$fname."', '".$lname."','".$accno."', '".$emailid."', '".$amount."', '".$dob."', '".$phone."', '".$vnum."', '".$accdate."' )";
             
             $run_sql = mysqli_query($con,$sql2);
@@ -183,11 +198,59 @@ include 'includes/dbconnect.php';
 
 
                 <div class="container">
+                    <article class="row">
+                        <section class="col-lg-8">
+                            <div class="page-header">
+                                <h2>FastagAccount Details</h2>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+
+                                    <th>Account number</th>
+                                    <th>Email ID</th>
+                                    <th>Vehicle number</th>
+                                    <th>Amount</th>
+
+                                </thead>
+                                <?php
+	
+		$in_sql = "SELECT * FROM fastag WHERE customerid = '$id'";
+		$ru_sql = mysqli_query($con, $in_sql);
+
+		
+		while($rows = mysqli_fetch_array($ru_sql)){
+
+			echo '
+
+				<tbody>
+					      <tr>
+					        
+                            <td>'.$rows['accno'].'</td>
+                            <td>'.$rows['emailid'].'</td>
+                            <td>'.$rows['vehiclenum'].'</td>
+                            <td>'.$rows['amount'].'</td>
+                            
+					      </tr>
+					    </tbody>
+				
+			';
+
+		}
+    ?>
+
+                            </table>
+                        </section>
+                    </article>
+                </div>
+
+
+
+                <div class="container">
                     <div class="container">
                         <article class="row">
                             <section class="col-sm-8">
                                 <div class="page-header">
-                                    <h2>FASTAG </h2>
+                                    <h2>RECHARGE </h2>
                                 </div>
                                 <form class="form-horizontal" action="recharge.php" method="post" role="form">
                                     <b>
@@ -196,6 +259,13 @@ include 'includes/dbconnect.php';
                                             <div class="col-sm-8">
                                                 <input type="text" name="vnum" class="form-control"
                                                     placeholder="Enter car number" id="vnum" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text" class="col-sm-3 control-label">Account Number:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" name="accno" class="form-control"
+                                                    placeholder="Enter customer's Account number" id="accno" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -212,7 +282,7 @@ include 'includes/dbconnect.php';
                                                     placeholder="Enter Amount" id="amount" required>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="number" class="col-sm-3 control-label">First Name :</label>
                                             <div class="col-sm-8">
                                                 <input type="text" name="fname" class="form-control"
@@ -225,7 +295,7 @@ include 'includes/dbconnect.php';
                                                 <input type="text" name="lname" class="form-control"
                                                     placeholder="Enter customer's last name" id="lname" required>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <div class="col-sm-8">
                                                 <input type="submit" id="submit" name="submit" value="Submit"

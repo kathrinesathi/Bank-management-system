@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 08:30 PM
+-- Generation Time: Mar 29, 2021 at 04:33 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -35,6 +35,15 @@ CREATE TABLE `accountmaster` (
   `interest` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `accountmaster`
+--
+
+INSERT INTO `accountmaster` (`accounttype`, `prefix`, `minbalance`, `interest`) VALUES
+('current', 'cur', '500.00', '0.50'),
+('Savings', 'sv', '4000.00', '1.50'),
+('Student', 'stu', '500.00', '2.00');
+
 -- --------------------------------------------------------
 
 --
@@ -54,9 +63,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accno`, `customerid`, `accstatus`, `accopendate`, `accountbalance`) VALUES
-('18106213', 1, 'Savings', '2021-03-15', '1500000.00'),
-('18106214', 2, 'Savings', '2021-03-15', '1000000.00'),
-('18106215', 3, 'Savings', '2021-03-15', '700000.00'),
+('18106213', 1, 'Savings', '2021-03-15', '1498000.00'),
+('18106214', 2, 'Savings', '2021-03-15', '1001000.00'),
+('18106215', 3, 'Savings', '2021-03-15', '701000.00'),
 ('18106261', 4, 'Savings', '2021-03-15', '57000.00');
 
 -- --------------------------------------------------------
@@ -108,10 +117,11 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customerid`, `iban`, `firstname`, `lastname`, `emailid`, `password`, `transpassword`, `accstatus`, `city`, `state`, `country`, `accopendate`) VALUES
-(1, 'KH12345', 'kathrine', 'sathi', 'kathrine@gmail.com', '123456', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01'),
-(2, 'KH12345', 'Hari', 'Prasaad', 'hari@gmail.com', '123456', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01'),
-(3, 'KH12345', 'Deva', 'raj', 'deva@gmail.com', '123456', '1111', 'current', 'chennai', 'tamilnadu', 'india', '2021-03-02'),
-(4, 'KH12345', 'Rohith', ' ', 'rohit@gmail.com', '123456', '1111', 'savings', 'chennai', 'tamilnadu', 'India', '2021-03-02');
+(1, 'KH12345', 'kathrine', 'sathi', 'kathrine@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01'),
+(2, 'KH12345', 'Hari', 'Prasaad', 'hari@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1111', 'saving', 'chennai', 'Tamil Nadu', 'India', '2021-03-01'),
+(3, 'KH12345', 'Deva', 'raj', 'deva@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1111', 'current', 'chennai', 'tamilnadu', 'india', '2021-03-02'),
+(4, 'KH12345', 'Rohith', ' ', 'rohit@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1111', 'savings', 'chennai', 'tamilnadu', 'India', '2021-03-02'),
+(5, 'KH12345', 'Selva', 'subha', 'subha@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1111', 'Current', 'Chennai', 'Tamilnadu', 'India', '2021-03-29');
 
 -- --------------------------------------------------------
 
@@ -122,7 +132,7 @@ INSERT INTO `customers` (`customerid`, `iban`, `firstname`, `lastname`, `emailid
 CREATE TABLE `employees` (
   `empid` int(10) NOT NULL,
   `empname` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `emailid` varchar(30) NOT NULL,
   `contactno` varchar(30) NOT NULL,
   `createdat` date NOT NULL,
@@ -134,8 +144,8 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`empid`, `empname`, `password`, `emailid`, `contactno`, `createdat`, `last_login`) VALUES
-(1, 'Bennet ', '123456', 'bennet@gmail.com', '6369510580', '2021-03-01', '2021-03-07 15:24:23'),
-(2, 'jeevi', '123456', 'jeevi@gmail.com', '7092434502', '2021-03-18', '2021-03-18 11:00:03');
+(1, 'Bennet ', 'e10adc3949ba59abbe56e057f20f883e', 'bennet@gmail.com', '6369510580', '2021-03-01', '2021-03-07 15:24:23'),
+(2, 'bala', 'e10adc3949ba59abbe56e057f20f883e', 'bala@gmail.com', '9551959553', '2021-03-18', '2021-03-18 11:00:03');
 
 -- --------------------------------------------------------
 
@@ -234,7 +244,10 @@ CREATE TABLE `loantype` (
 --
 
 INSERT INTO `loantype` (`loantype`, `prefix`, `maximumamount`, `minimumamount`, `interest`, `status`) VALUES
-('car loan', 'a car loan', 700000.00, 100000.00, 1234.00, 'loan');
+('car loan', 'a car loan', 700000.00, 100000.00, 1234.00, 'loan'),
+('Education loan', 'A Education loan', 1000000.00, 500000.00, 1321.00, 'loan'),
+('house loan', 'A House loan', 1500000.00, 300000.00, 2871.00, 'loan'),
+('personal loan', 'A Personal loan', 1200000.00, 500000.00, 2321.00, 'loan');
 
 -- --------------------------------------------------------
 
@@ -255,7 +268,8 @@ CREATE TABLE `registered_payee` (
 --
 
 INSERT INTO `registered_payee` (`owner_no`, `payeename`, `accno`, `accounttype`, `iban`) VALUES
-('18106213', 'rohit', '18106261', 'Current', 'KH12345');
+('18106214', 'Kathrine', '18106213', 'Savings', 'KH12345'),
+('18106213', 'HariPrasaad', '18106214', 'Savings', 'KH12345');
 
 -- --------------------------------------------------------
 
@@ -275,19 +289,9 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`payeeid`, `paymentdate`, `receiveid`, `amount`) VALUES
-('2', '2021-03-01', '3', 2000),
-('2', '2021-03-02', '4', 5000),
-('2147483647', '2021-03-14', '2147483647', 2000),
-('2147483647', '2021-03-14', '2147483647', 2000),
-('2147483647', '2021-03-14', '2147483647', 4000),
-('2147483647', '2021-03-14', '2147483647', 4000),
-('2147483647', '2021-03-14', '2147483647', 4000),
-('2147483647', '2021-03-14', '2147483647', 4000),
-('2147483647', '2021-03-14', '2147483647', 4000),
-('211418205059', '2021-03-14', '211418205049', 4000),
-('2', '2021-03-14', '211418205067', 5000),
-('2', '2021-03-14', '211418205067', 5000),
-('2', '2021-03-14', '211418205049', 5000);
+('1', '2021-03-25', '18106214', 5000),
+('1', '2021-03-25', '18106215', 1000),
+('2', '2021-03-25', '18106213', 4000);
 
 --
 -- Indexes for dumped tables

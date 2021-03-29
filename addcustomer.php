@@ -10,15 +10,16 @@ include 'includes/dbconnect.php';
 		$fname = $_POST['fname'];
 		$lname = $_POST['lname'];
     	$emailid = $_POST['emailid'];
-    	$password = $_POST['password'];
+    	$password = md5($_POST['password']);
     	$pin = $_POST['pin'];
 		$accstatus = $_POST['accstatus'];
 		$city= $_POST['city'];
 		$state= $_POST['state'];
 		$country= $_POST['country'];
 		$accdate = date('y-m-d');
-
-
+        
+        // $hashed_password=md5($_REQUEST["password"]);
+        // $sfqry = "SELECT * FROM login WHERE email='".$username."' and password='".md5($password)."'";
 
 		// $accno = $_POST['accno'];
 		// $customerid = $_POST['customerid'];

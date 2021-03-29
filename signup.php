@@ -9,7 +9,7 @@ include 'includes/dbconnect.php';
         $contactno = $_POST['contactno'];
 		$empname = $_POST['empname'];
     	$emailid = $_POST['emailid'];
-    	$password = $_POST['password'];
+    	$password = md5($_POST['password']);
     	// $pin = $_POST['pin'];
 		// $accstatus = $_POST['accstatus'];
 		// $city= $_POST['city'];
